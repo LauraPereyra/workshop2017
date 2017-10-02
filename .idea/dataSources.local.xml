@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="taller_db@localhost" uuid="bf0759c6-ca02-4288-bfd8-4a9b27abf4d9">
+      <database-info product="PostgreSQL" version="9.6.5" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4.1212">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>taller</user-name>
+      <introspection-schemas>taller_db:public</introspection-schemas>
+    </data-source>
+  </component>
+</project>
