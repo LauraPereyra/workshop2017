@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/catalog', 'CatalogController@index');
+
+Route::get('/catalog/dataTable', 'CatalogController@indexDataTable');
