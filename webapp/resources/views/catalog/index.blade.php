@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.head')
 
 @section('menu_dashboard', 'open active')
 @section('title', 'Listado de Catalogos')
