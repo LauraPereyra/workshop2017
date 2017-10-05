@@ -3,7 +3,7 @@
 <head>
 
     <!-- Title -->
-    <title>Alpha | Responsive Admin Dashboard Template</title>
+    <title>Juguetería</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta charset="UTF-8">
@@ -626,28 +626,6 @@
                         <ul>
                             <li><a href="maps-google.html">Google Maps</a></li>
                             <li><a href="maps-vector.html">Vector Maps</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="no-padding">
-                    <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">tag_faces</i>Extra Pages<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li><a href="404.html">404 Page</a></li>
-                            <li><a href="500.html">500 Page</a></li>
-                            <li><a href="invoice.html">Invoice</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="sign-in.html">Sign In</a></li>
-                            <li><a href="sign-up.html">Sign Up</a></li>
-                            <li><a href="lock-screen.html">Lock Screen</a></li>
-                            <li><a href="pattern-lock-screen.html">Pattern Lock Screen</a></li>
-                            <li><a href="forgot.html">Forgot Password</a></li>
-                            <li><a href="pricing-tables.html">Pricing Tables</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="timeline.html">Timeline</a></li>
-                            <li><a href="calendar.html">Calendar</a></li>
-                            <li><a href="coming-soon.html">Coming Soon</a></li>
                         </ul>
                     </div>
                 </li>
