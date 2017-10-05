@@ -1,5 +1,9 @@
 <nav class="menu">
                             <ul class="sidebar-menu metismenu" id="sidebar-menu">
+                                <li class="@yield('menu_supplierorder','')">
+                                    <a href="index.html">
+                                        <i class="fa fa-home"></i> Pedidos Proveedor </a>
+                                </li>
                                 <li class="@yield('menu_dashboard','')">
                                     <a href="index.html">
                                         <i class="fa fa-home"></i> Dashboard </a>
