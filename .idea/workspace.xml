@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f639c7bb-eb44-4d59-bc8d-0670da23cb2d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/app/Http/Controllers/SupplierOrderController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/app/SupplierOrder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/database/migrations/2017_10_05_050100_supplierorder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/database/seeds/SupplierOrderSeeder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/resources/views/supplierorder/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workshop2017.iml" afterPath="$PROJECT_DIR$/.idea/workshop2017.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/composer.lock" afterPath="$PROJECT_DIR$/webapp/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/webapp/database/seeds/DatabaseSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/resources/views/layouts/head.blade.php" afterPath="$PROJECT_DIR$/webapp/resources/views/layouts/head.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/resources/views/layouts/menu.blade.php" afterPath="$PROJECT_DIR$/webapp/resources/views/layouts/menu.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/routes/web.php" afterPath="$PROJECT_DIR$/webapp/routes/web.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -564,12 +551,20 @@
       <updated>1506959685035</updated>
       <workItem from="1506959689423" duration="1752000" />
       <workItem from="1507093740605" duration="170000" />
-      <workItem from="1507187240232" duration="10409000" />
+      <workItem from="1507187240232" duration="10568000" />
     </task>
+    <task id="LOCAL-00001" summary="Supplier Orders">
+      <created>1507202433774</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1507202433774</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12331000" />
+    <option name="totallyTimeSpent" value="12490000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
