@@ -1,6 +1,6 @@
 @extends('layouts.head')
 
-@section('menu_dashboard', 'open active')
+
 @section('title', 'Listado de Catalogos')
 @section('title-description', 'Administración de los catalogos del sistema')
 

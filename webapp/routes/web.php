@@ -25,3 +25,5 @@ Route::get('/catalog/dataTable', 'CatalogController@indexDataTable');
 Route::get('/supplierorder', 'SupplierOrderController@index');
 
 Route::get('/supplierorder/dataTable', 'SupplierOrderController@indexDataTable');
+
+Route::resource('/toyCreate','ToysController');

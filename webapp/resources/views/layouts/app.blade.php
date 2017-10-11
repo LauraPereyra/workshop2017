@@ -1,360 +1,649 @@
-<!doctype html>
-<html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title> Workshop 2017 - @yield('title') </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="css/vendor.css">
-        <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="css/app-' + themeName + '.css">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="css/app.css">');
-            }
-        </script>
-    </head>
-    <body>
-        <div class="main-wrapper">
-            <div class="app" id="app">
-                <header class="header">
-                    <div class="header-block header-block-collapse d-lg-none d-xl-none">
-                        <button class="collapse-btn" id="sidebar-collapse-btn">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </div>
-                    <div class="header-block header-block-search">
-                        <form role="search">
-                            <div class="input-container">
-                                <i class="fa fa-search"></i>
-                                <input type="search" placeholder="Search">
-                                <div class="underline"></div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="header-block header-block-buttons">
-                        <a href="https://github.com/modularcode/modular-admin-html" class="btn btn-sm header-btn">
-                            <i class="fa fa-github-alt"></i>
-                            <span>View on GitHub</span>
-                        </a>
-                        <a href="https://github.com/modularcode/modular-admin-html/stargazers" class="btn btn-sm header-btn">
-                            <i class="fa fa-star"></i>
-                            <span>Star Us</span>
-                        </a>
-                        <a href="https://github.com/modularcode/modular-admin-html/releases" class="btn btn-sm header-btn">
-                            <i class="fa fa-cloud-download"></i>
-                            <span>Download .zip</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Material Admin - Static tables</title>
+
+    <!-- BEGIN META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="your,keywords">
+    <meta name="description" content="Short explanation about this website">
+    <!-- END META -->
+
+    <!-- BEGIN STYLESHEETS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css'/>
+    <link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/bootstrap.css?1422792965" />
+    <link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/materialadmin.css?1425466319" />
+    <link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/font-awesome.min.css?1422529194" />
+    <link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/material-design-iconic-font.min.css?1421434286" />
+    <!-- END STYLESHEETS -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="../../assets/js/libs/utils/html5shiv.js?1403934957"></script>
+    <script type="text/javascript" src="../../assets/js/libs/utils/respond.min.js?1403934956"></script>
+    <![endif]-->
+</head>
+<body class="menubar-hoverable header-fixed ">
+
+<!-- BEGIN HEADER-->
+<header id="header" >
+    <div class="headerbar">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="headerbar-left">
+            <ul class="header-nav header-nav-options">
+                <li class="header-nav-brand" >
+                    <div class="brand-holder">
+                        <a href="../../html/dashboards/dashboard.html">
+                            <span class="text-lg text-bold text-primary">MATERIAL DESIGN</span>
                         </a>
                     </div>
-                    <div class="header-block header-block-nav">
-                        <ul class="nav-profile">
-                            <li class="notifications new">
-                                <a href="" data-toggle="dropdown">
-                                    <i class="fa fa-bell-o"></i>
-                                    <sup>
-                                        <span class="counter">8</span>
-                                    </sup>
-                                </a>
-                                <div class="dropdown-menu notifications-dropdown-menu">
-                                    <ul class="notifications-container">
-                                        <li>
-                                            <a href="" class="notification-item">
-                                                <div class="img-col">
-                                                    <div class="img" style="background-image: url('assets/faces/3.jpg')"></div>
-                                                </div>
-                                                <div class="body-col">
-                                                    <p>
-                                                        <span class="accent">Zack Alien</span> pushed new commit:
-                                                        <span class="accent">Fix page load performance issue</span>. </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="" class="notification-item">
-                                                <div class="img-col">
-                                                    <div class="img" style="background-image: url('assets/faces/5.jpg')"></div>
-                                                </div>
-                                                <div class="body-col">
-                                                    <p>
-                                                        <span class="accent">Amaya Hatsumi</span> started new task:
-                                                        <span class="accent">Dashboard UI design.</span>. </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="" class="notification-item">
-                                                <div class="img-col">
-                                                    <div class="img" style="background-image: url('assets/faces/8.jpg')"></div>
-                                                </div>
-                                                <div class="body-col">
-                                                    <p>
-                                                        <span class="accent">Andy Nouman</span> deployed new version of
-                                                        <span class="accent">NodeJS REST Api V3</span>
-                                                    </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <footer>
-                                        <ul>
-                                            <li>
-                                                <a href=""> View All </a>
-                                            </li>
-                                        </ul>
-                                    </footer>
-                                </div>
-                            </li>
-                            <li class="profile dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"> </div>
-                                    <span class="name"> John Doe </span>
-                                </a>
-                                <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fa fa-user icon"></i> Profile </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fa fa-bell icon"></i> Notifications </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fa fa-gear icon"></i> Settings </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="login.html">
-                                        <i class="fa fa-power-off icon"></i> Logout </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </header>
-                <aside class="sidebar">
-                    <div class="sidebar-container">
-                        <div class="sidebar-header">
-                            <div class="brand">
-                                <div class="logo">
-                                    <span class="l l1"></span>
-                                    <span class="l l2"></span>
-                                    <span class="l l3"></span>
-                                    <span class="l l4"></span>
-                                    <span class="l l5"></span>
-                                </div> Modular Admin </div>
-                        </div>
-                        @include('layouts.menu')
-                    </div>
-                    <footer class="sidebar-footer">
-                        <ul class="sidebar-menu metismenu" id="customize-menu">
-                            <li>
-                                <ul>
-                                    <li class="customize">
-                                        <div class="customize-item">
-                                            <div class="row customize-header">
-                                                <div class="col-4"> </div>
-                                                <div class="col-4">
-                                                    <label class="title">fixed</label>
-                                                </div>
-                                                <div class="col-4">
-                                                    <label class="title">static</label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <label class="title">Sidebar:</label>
-                                                </div>
-                                                <div class="col-4">
-                                                    <label>
-                                                        <input class="radio" type="radio" name="sidebarPosition" value="sidebar-fixed">
-                                                        <span></span>
-                                                    </label>
-                                                </div>
-                                                <div class="col-4">
-                                                    <label>
-                                                        <input class="radio" type="radio" name="sidebarPosition" value="">
-                                                        <span></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <label class="title">Header:</label>
-                                                </div>
-                                                <div class="col-4">
-                                                    <label>
-                                                        <input class="radio" type="radio" name="headerPosition" value="header-fixed">
-                                                        <span></span>
-                                                    </label>
-                                                </div>
-                                                <div class="col-4">
-                                                    <label>
-                                                        <input class="radio" type="radio" name="headerPosition" value="">
-                                                        <span></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <label class="title">Footer:</label>
-                                                </div>
-                                                <div class="col-4">
-                                                    <label>
-                                                        <input class="radio" type="radio" name="footerPosition" value="footer-fixed">
-                                                        <span></span>
-                                                    </label>
-                                                </div>
-                                                <div class="col-4">
-                                                    <label>
-                                                        <input class="radio" type="radio" name="footerPosition" value="">
-                                                        <span></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="customize-item">
-                                            <ul class="customize-colors">
-                                                <li>
-                                                    <span class="color-item color-red" data-theme="red"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="color-item color-orange" data-theme="orange"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="color-item color-green active" data-theme=""></span>
-                                                </li>
-                                                <li>
-                                                    <span class="color-item color-seagreen" data-theme="seagreen"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="color-item color-blue" data-theme="blue"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="color-item color-purple" data-theme="purple"></span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <a href="">
-                                    <i class="fa fa-cog"></i> Customize </a>
-                            </li>
-                        </ul>
-                    </footer>
-                </aside>
-                <div class="sidebar-overlay" id="sidebar-overlay"></div>
-                <div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
-                <div class="mobile-menu-handle"></div>
-                <article class="content static-tables-page">
-                    <div class="title-block">
-                        <h1 class="title"> @yield('title') </h1>
-                        <p class="title-description"> @yield('title-description') </p>
-                    </div>
-                    @yield('content')
-                </article>
-                <footer class="footer">
-                    <div class="footer-block buttons">
-                        <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe>
-                    </div>
-                    <div class="footer-block author">
-                        <ul>
-                            <li> created by
-                                <a href="https://github.com/modularcode">ModularCode</a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/modularcode/modular-admin-html#get-in-touch">get in touch</a>
-                            </li>
-                        </ul>
-                    </div>
-                </footer>
-                <div class="modal fade" id="modal-media">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Media Library</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    <span class="sr-only">Close</span>
-                                </button>
-                            </div>
-                            <div class="modal-body modal-tab-container">
-                                <ul class="nav nav-tabs modal-tabs" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#gallery" data-toggle="tab" role="tab">Gallery</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="#upload" data-toggle="tab" role="tab">Upload</a>
-                                    </li>
-                                </ul>
-                                <div class="tab-content modal-tab-content">
-                                    <div class="tab-pane fade" id="gallery" role="tabpanel">
-                                        <div class="images-container">
-                                            <div class="row"> </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade active in" id="upload" role="tabpanel">
-                                        <div class="upload-container">
-                                            <div id="dropzone">
-                                                <form action="/" method="POST" enctype="multipart/form-data" class="dropzone needsclick dz-clickable" id="demo-upload">
-                                                    <div class="dz-message-block">
-                                                        <div class="dz-message needsclick"> Drop files here or click to upload. </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Insert Selected</button>
-                            </div>
-                        </div>
-                        <!-- /.modal-content -->
-                    </div>
-                    <!-- /.modal-dialog -->
-                </div>
-                <!-- /.modal -->
-                <div class="modal fade" id="confirm-modal">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">
-                                    <i class="fa fa-warning"></i> Alert</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Are you sure want to do this?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                            </div>
-                        </div>
-                        <!-- /.modal-content -->
-                    </div>
-                    <!-- /.modal-dialog -->
-                </div>
-                <!-- /.modal -->
+                </li>
+                <li>
+                    <a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="headerbar-right">
+            <ul class="header-nav header-nav-options">
+
+                <li class="dropdown hidden-xs">
+                    <a href="javascript:void(0);" class="btn btn-icon-toggle btn-default" data-toggle="dropdown">
+                        <i class="fa fa-bell"></i><sup class="badge style-danger">4</sup>
+                    </a>
+                    <ul class="dropdown-menu animation-expand">
+                        <li class="dropdown-header">Today's messages</li>
+                        <li>
+                            <a class="alert alert-callout alert-warning" href="javascript:void(0);">
+                                <img class="pull-right img-circle dropdown-avatar" src="../../assets/img/avatar2.jpg?1404026449" alt="" />
+                                <strong>Alex Anistor</strong><br/>
+                                <small>Testing functionality...</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="alert alert-callout alert-info" href="javascript:void(0);">
+                                <img class="pull-right img-circle dropdown-avatar" src="../../assets/img/avatar3.jpg?1404026799" alt="" />
+                                <strong>Alicia Adell</strong><br/>
+                                <small>Reviewing last changes...</small>
+                            </a>
+                        </li>
+                        <li class="dropdown-header">Options</li>
+                        <li><a href="../../html/pages/login.html">View all messages <span class="pull-right"><i class="fa fa-arrow-right"></i></span></a></li>
+                        <li><a href="../../html/pages/login.html">Mark as read <span class="pull-right"><i class="fa fa-arrow-right"></i></span></a></li>
+                    </ul><!--end .dropdown-menu -->
+                </li><!--end .dropdown -->
+
+            </ul><!--end .header-nav-options -->
+
+            <ul class="header-nav header-nav-profile">
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
+                        <img src="../../assets/img/avatar1.jpg?1403934956" alt="" />
+                        <span class="profile-info">
+									{{ Auth::user()->email }}
+                                    <!--	<small>{{ Auth::user()->tipo_usuario }}</small>-->
+								</span>
+                    </a>
+                    <ul class="dropdown-menu animation-dock">
+                        <li class="dropdown-header">Configuración</li>
+                        <li><a href="../../html/pages/profile.html">Mi perfil</a></li>
+                        <li><a href="../../html/pages/blog/post.html">My blog <span class="badge style-danger pull-right">16</span></a></li>
+                        <li><a href="../../html/pages/calendar.html">My appointments</a></li>
+                        <li class="divider"></li>
+                        <li><a href="../../html/pages/locked.html"><i class="fa fa-fw fa-lock"></i> Lock</a></li>
+                        <li><a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>
+                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+
+                    </ul><!--end .dropdown-menu -->
+                </li><!--end .dropdown -->
+            </ul><!--end .header-nav-profile -->
+
+        </div><!--end #header-navbar-collapse -->
+    </div>
+</header>
+<!-- END HEADER-->
+
+<!-- BEGIN BASE-->
+<div id="base">
+
+    <!-- BEGIN OFFCANVAS LEFT -->
+    <div class="offcanvas">
+    </div><!--end .offcanvas-->
+    <!-- END OFFCANVAS LEFT -->
+
+    <!-- BEGIN CONTENT-->
+    <div id="content">
+        <section class="">
+
+            @yield('content')
+
+        </section>
+        <!-- BEGIN TABLE HOVER -->
+    </div><!--end #content-->
+    <!-- END CONTENT -->
+
+    <!-- BEGIN MENUBAR-->
+    <div id="menubar" class="menubar-inverse  animate">
+        <div class="menubar-fixed-panel">
+            <div>
+                <a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <div class="expanded">
+                <a href="../../html/dashboards/dashboard.html">
+                    <span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
+                </a>
             </div>
         </div>
-        <!-- Reference block for JS -->
-        <div class="ref" id="ref">
-            <div class="color-primary"></div>
-            <div class="chart">
-                <div class="color-primary"></div>
-                <div class="color-secondary"></div>
+        <div class="nano has-scrollbar" style="height: 924px;"><div class="nano-content" tabindex="0" style="right: -17px;"><div class="menubar-scroll-panel" style="padding-bottom: 33px;">
+
+                    <!-- BEGIN MAIN MENU -->
+                    <ul id="main-menu" class="gui-controls">
+
+                        <!-- BEGIN DASHBOARD -->
+                        <li class="active">
+                            <a href="{{ url('/home') }}" class="active">
+                                <div class="gui-icon"><i class="md md-home"></i></div>
+                                <span class="title">Inicio</span>
+                            </a>
+                        </li><!--end /menu-li -->
+                        <!-- END DASHBOARD -->
+
+                        <!-- BEGIN EMAIL -->
+                        <li class="gui-folder">
+                            <a>
+                                <div class="gui-icon"><i class="md md-email"></i></div>
+                                <span class="title">Usuario</span>
+                            </a>
+                            <!--start submenu -->
+                            <ul>
+                                <li><a href="{{ url('/catequista/formulario') }}"><span class="title">Registrar usuario</span></a></li>
+                                <li><a href="{{ url('/catequista') }}"><span class="title">Lista de usuario</span></a></li>
+                            </ul><!--end /submenu -->
+                        </li><!--end /menu-li -->
+                        <!-- END EMAIL -->
+
+                        <!-- BEGIN DASHBOARD -->
+                        <li>
+                            <a href="../../html/layouts/builder.html">
+                                <div class="gui-icon"><i class="md md-web"></i></div>
+                                <span class="title">Layouts</span>
+                            </a>
+                        </li><!--end /menu-li -->
+                        <!-- END DASHBOARD -->
+
+                        <!-- BEGIN UI -->
+                        <li class="gui-folder">
+                            <a>
+                                <div class="gui-icon"><i class="fa fa-puzzle-piece fa-fw"></i></div>
+                                <span class="title">UI elements</span>
+                            </a>
+                            <!--start submenu -->
+                            <ul>
+                                <li><a href="../../html/ui/colors.html"><span class="title">Colors</span></a></li>
+                                <li><a href="../../html/ui/typography.html"><span class="title">Typography</span></a></li>
+                                <li><a href="../../html/ui/cards.html"><span class="title">Cards</span></a></li>
+                                <li><a href="../../html/ui/buttons.html"><span class="title">Buttons</span></a></li>
+                                <li><a href="../../html/ui/lists.html"><span class="title">Lists</span></a></li>
+                                <li><a href="../../html/ui/tabs.html"><span class="title">Tabs</span></a></li>
+                                <li><a href="../../html/ui/accordions.html"><span class="title">Accordions</span></a></li>
+                                <li><a href="../../html/ui/messages.html"><span class="title">Messages</span></a></li>
+                                <li><a href="../../html/ui/offcanvas.html"><span class="title">Off-canvas</span></a></li>
+                                <li><a href="../../html/ui/grid.html"><span class="title">Grid</span></a></li>
+                                <li class="gui-folder">
+                                    <a href="javascript:void(0);">
+                                        <span class="title">Icons</span>
+                                    </a>
+                                    <!--start submenu -->
+                                    <ul>
+                                        <li><a href="../../html/ui/icons/materialicons.html"><span class="title">Material Design Icons</span></a></li>
+                                        <li><a href="../../html/ui/icons/fontawesome.html"><span class="title">Font Awesome</span></a></li>
+                                        <li><a href="../../html/ui/icons/glyphicons.html"><span class="title">Glyphicons</span></a></li>
+                                        <li><a href="../../html/ui/icons/skycons.html"><span class="title">Skycons</span></a></li>
+                                    </ul><!--end /submenu -->
+                                </li><!--end /menu-li -->
+                            </ul><!--end /submenu -->
+                        </li><!--end /menu-li -->
+                        <!-- END UI -->
+
+                        <!-- BEGIN TABLES -->
+                        <li class="gui-folder">
+                            <a>
+                                <div class="gui-icon"><i class="fa fa-table"></i></div>
+                                <span class="title">Tables</span>
+                            </a>
+                            <!--start submenu -->
+                            <ul>
+                                <li><a href="../../html/tables/static.html"><span class="title">Static Tables</span></a></li>
+                                <li><a href="../../html/tables/dynamic.html"><span class="title">Dynamic Tables</span></a></li>
+                                <li><a href="../../html/tables/responsive.html"><span class="title">Responsive Table</span></a></li>
+                            </ul><!--end /submenu -->
+                        </li><!--end /menu-li -->
+                        <!-- END TABLES -->
+
+                        <!-- BEGIN FORMS -->
+                        <li class="gui-folder">
+                            <a>
+                                <div class="gui-icon"><span class="glyphicon glyphicon-list-alt"></span></div>
+                                <span class="title">Forms</span>
+                            </a>
+                            <!--start submenu -->
+                            <ul>
+                                <li><a href="../../html/forms/basic.html"><span class="title">Form basic</span></a></li>
+                                <li><a href="../../html/forms/advanced.html"><span class="title">Form advanced</span></a></li>
+                                <li><a href="../../html/forms/layouts.html"><span class="title">Form layouts</span></a></li>
+                                <li><a href="../../html/forms/editors.html"><span class="title">Editors</span></a></li>
+                                <li><a href="../../html/forms/validation.html"><span class="title">Form validation</span></a></li>
+                                <li><a href="../../html/forms/wizard.html"><span class="title">Form wizard</span></a></li>
+                            </ul><!--end /submenu -->
+                        </li><!--end /menu-li -->
+                        <!-- END FORMS -->
+
+                        <!-- BEGIN PAGES -->
+                        <li class="gui-folder">
+                            <a>
+                                <div class="gui-icon"><i class="md md-computer"></i></div>
+                                <span class="title">Pages</span>
+                            </a>
+                            <!--start submenu -->
+                            <ul>
+                                <li class="gui-folder">
+                                    <a href="javascript:void(0);">
+                                        <span class="title">Contacts</span>
+                                    </a>
+                                    <!--start submenu -->
+                                    <ul>
+                                        <li><a href="../../html/pages/contacts/search.html"><span class="title">Search</span></a></li>
+                                        <li><a href="../../html/pages/contacts/details.html"><span class="title">Contact card</span></a></li>
+                                        <li><a href="../../html/pages/contacts/add.html"><span class="title">Insert contact</span></a></li>
+                                    </ul><!--end /submenu -->
+                                </li><!--end /menu-li -->
+                                <li class="gui-folder">
+                                    <a href="javascript:void(0);">
+                                        <span class="title">Search</span>
+                                    </a>
+                                    <!--start submenu -->
+                                    <ul>
+                                        <li><a href="../../html/pages/search/results-text.html"><span class="title">Results - Text</span></a></li>
+                                        <li><a href="../../html/pages/search/results-text-image.html"><span class="title">Results - Text and Image</span></a></li>
+                                    </ul><!--end /submenu -->
+                                </li><!--end /menu-li -->
+                                <li class="gui-folder">
+                                    <a href="javascript:void(0);">
+                                        <span class="title">Blog</span>
+                                    </a>
+                                    <!--start submenu -->
+                                    <ul>
+                                        <li><a href="../../html/pages/blog/masonry.html"><span class="title">Blog masonry</span></a></li>
+                                        <li><a href="../../html/pages/blog/list.html"><span class="title">Blog list</span></a></li>
+                                        <li><a href="../../html/pages/blog/post.html"><span class="title">Blog post</span></a></li>
+                                    </ul><!--end /submenu -->
+                                </li><!--end /menu-li -->
+                                <li class="gui-folder">
+                                    <a href="javascript:void(0);">
+                                        <span class="title">Error pages</span>
+                                    </a>
+                                    <!--start submenu -->
+                                    <ul>
+                                        <li><a href="../../html/pages/404.html"><span class="title">404 page</span></a></li>
+                                        <li><a href="../../html/pages/500.html"><span class="title">500 page</span></a></li>
+                                    </ul><!--end /submenu -->
+                                </li><!--end /menu-li -->
+                                <li><a href="../../html/pages/profile.html"><span class="title">User profile<span class="badge style-accent">42</span></span></a></li>
+                                <li><a href="../../html/pages/invoice.html"><span class="title">Invoice</span></a></li>
+                                <li><a href="../../html/pages/calendar.html"><span class="title">Calendar</span></a></li>
+                                <li><a href="../../html/pages/pricing.html"><span class="title">Pricing</span></a></li>
+                                <li><a href="../../html/pages/timeline.html"><span class="title">Timeline</span></a></li>
+                                <li><a href="../../html/pages/maps.html"><span class="title">Maps</span></a></li>
+                                <li><a href="../../html/pages/locked.html"><span class="title">Lock screen</span></a></li>
+                                <li><a href="../../html/pages/login.html"><span class="title">Login</span></a></li>
+                                <li><a href="../../html/pages/blank.html"><span class="title">Blank page</span></a></li>
+                            </ul><!--end /submenu -->
+                        </li><!--end /menu-li -->
+                        <!-- END FORMS -->
+
+                        <!-- BEGIN CHARTS -->
+                        <li>
+                            <a href="../../html/charts/charts.html">
+                                <div class="gui-icon"><i class="md md-assessment"></i></div>
+                                <span class="title">Charts</span>
+                            </a>
+                        </li><!--end /menu-li -->
+                        <!-- END CHARTS -->
+
+                        <!-- BEGIN LEVELS -->
+                        <li class="gui-folder">
+                            <a>
+                                <div class="gui-icon"><i class="fa fa-folder-open fa-fw"></i></div>
+                                <span class="title">Menu levels demo</span>
+                            </a>
+                            <!--start submenu -->
+                            <ul>
+                                <li><a href="#"><span class="title">Item 1</span></a></li>
+                                <li><a href="#"><span class="title">Item 1</span></a></li>
+                                <li class="gui-folder">
+                                    <a href="javascript:void(0);">
+                                        <span class="title">Open level 2</span>
+                                    </a>
+                                    <!--start submenu -->
+                                    <ul>
+                                        <li><a href="#"><span class="title">Item 2</span></a></li>
+                                        <li class="gui-folder">
+                                            <a href="javascript:void(0);">
+                                                <span class="title">Open level 3</span>
+                                            </a>
+                                            <!--start submenu -->
+                                            <ul>
+                                                <li><a href="#"><span class="title">Item 3</span></a></li>
+                                                <li><a href="#"><span class="title">Item 3</span></a></li>
+                                                <li class="gui-folder">
+                                                    <a href="javascript:void(0);">
+                                                        <span class="title">Open level 4</span>
+                                                    </a>
+                                                    <!--start submenu -->
+                                                    <ul>
+                                                        <li><a href="#"><span class="title">Item 4</span></a></li>
+                                                        <li class="gui-folder">
+                                                            <a href="javascript:void(0);">
+                                                                <span class="title">Open level 5</span>
+                                                            </a>
+                                                            <!--start submenu -->
+                                                            <ul>
+                                                                <li><a href="#"><span class="title">Item 5</span></a></li>
+                                                                <li><a href="#"><span class="title">Item 5</span></a></li>
+                                                            </ul><!--end /submenu -->
+                                                        </li><!--end /submenu-li -->
+                                                    </ul><!--end /submenu -->
+                                                </li><!--end /submenu-li -->
+                                            </ul><!--end /submenu -->
+                                        </li><!--end /submenu-li -->
+                                    </ul><!--end /submenu -->
+                                </li><!--end /submenu-li -->
+                            </ul><!--end /submenu -->
+                        </li><!--end /menu-li -->
+                        <!-- END LEVELS -->
+
+                    </ul><!--end .main-menu -->
+                    <!-- END MAIN MENU -->
+
+                    <div class="menubar-foot-panel">
+                        <small class="no-linebreak hidden-folded">
+                            <span class="opacity-75">Copyright © 2014</span> <strong>CodeCovers</strong>
+                        </small>
+                    </div>
+                </div></div><div class="nano-pane" style="display: none;"><div class="nano-slider" style="height: 907px; transform: translate(0px, 0px);"></div></div></div><!--end .menubar-scroll-panel-->
+    </div>
+    <!-- END MENUBAR -->
+
+    <!-- BEGIN OFFCANVAS RIGHT -->
+    <div class="offcanvas">
+
+        <!-- BEGIN OFFCANVAS SEARCH -->
+        <div id="offcanvas-search" class="offcanvas-pane width-8">
+            <div class="offcanvas-head">
+                <header class="text-primary">Search</header>
+                <div class="offcanvas-tools">
+                    <a class="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas">
+                        <i class="md md-close"></i>
+                    </a>
+                </div>
             </div>
-        </div>
-        <script src="js/vendor.js"></script>
-        <script src="js/app-template.js"></script>
-        <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+            <div class="offcanvas-body no-padding">
+                <ul class="list ">
+                    <li class="tile divider-full-bleed">
+                        <div class="tile-content">
+                            <div class="tile-text"><strong>A</strong></div>
+                        </div>
+                    </li>
+                    <li class="tile">
+                        <a class="tile-content ink-reaction" href="#offcanvas-chat" data-toggle="offcanvas" data-backdrop="false">
+                            <div class="tile-icon">
+                                <img src="../../assets/img/avatar4.jpg?1404026791" alt="" />
+                            </div>
+                            <div class="tile-text">
+                                Alex Nelson
+                                <small>123-123-3210</small>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="tile">
+                        <a class="tile-content ink-reaction" href="#offcanvas-chat" data-toggle="offcanvas" data-backdrop="false">
+                            <div class="tile-icon">
+                                <img src="../../assets/img/avatar9.jpg?1404026744" alt="" />
+                            </div>
+                            <div class="tile-text">
+                                Ann Laurens
+                                <small>123-123-3210</small>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="tile divider-full-bleed">
+                        <div class="tile-content">
+                            <div class="tile-text"><strong>J</strong></div>
+                        </div>
+                    </li>
+                    <li class="tile">
+                        <a class="tile-content ink-reaction" href="#offcanvas-chat" data-toggle="offcanvas" data-backdrop="false">
+                            <div class="tile-icon">
+                                <img src="../../assets/img/avatar2.jpg?1404026449" alt="" />
+                            </div>
+                            <div class="tile-text">
+                                Jessica Cruise
+                                <small>123-123-3210</small>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="tile">
+                        <a class="tile-content ink-reaction" href="#offcanvas-chat" data-toggle="offcanvas" data-backdrop="false">
+                            <div class="tile-icon">
+                                <img src="../../assets/img/avatar8.jpg?1404026729" alt="" />
+                            </div>
+                            <div class="tile-text">
+                                Jim Peters
+                                <small>123-123-3210</small>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="tile divider-full-bleed">
+                        <div class="tile-content">
+                            <div class="tile-text"><strong>M</strong></div>
+                        </div>
+                    </li>
+                    <li class="tile">
+                        <a class="tile-content ink-reaction" href="#offcanvas-chat" data-toggle="offcanvas" data-backdrop="false">
+                            <div class="tile-icon">
+                                <img src="../../assets/img/avatar5.jpg?1404026513" alt="" />
+                            </div>
+                            <div class="tile-text">
+                                Mabel Logan
+                                <small>123-123-3210</small>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="tile">
+                        <a class="tile-content ink-reaction" href="#offcanvas-chat" data-toggle="offcanvas" data-backdrop="false">
+                            <div class="tile-icon">
+                                <img src="../../assets/img/avatar11.jpg?1404026774" alt="" />
+                            </div>
+                            <div class="tile-text">
+                                Mary Peterson
+                                <small>123-123-3210</small>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="tile">
+                        <a class="tile-content ink-reaction" href="#offcanvas-chat" data-toggle="offcanvas" data-backdrop="false">
+                            <div class="tile-icon">
+                                <img src="../../assets/img/avatar3.jpg?1404026799" alt="" />
+                            </div>
+                            <div class="tile-text">
+                                Mike Alba
+                                <small>123-123-3210</small>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="tile divider-full-bleed">
+                        <div class="tile-content">
+                            <div class="tile-text"><strong>N</strong></div>
+                        </div>
+                    </li>
+                    <li class="tile">
+                        <a class="tile-content ink-reaction" href="#offcanvas-chat" data-toggle="offcanvas" data-backdrop="false">
+                            <div class="tile-icon">
+                                <img src="../../assets/img/avatar6.jpg?1404026572" alt="" />
+                            </div>
+                            <div class="tile-text">
+                                Nathan Peterson
+                                <small>123-123-3210</small>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="tile divider-full-bleed">
+                        <div class="tile-content">
+                            <div class="tile-text"><strong>P</strong></div>
+                        </div>
+                    </li>
+                    <li class="tile">
+                        <a class="tile-content ink-reaction" href="#offcanvas-chat" data-toggle="offcanvas" data-backdrop="false">
+                            <div class="tile-icon">
+                                <img src="../../assets/img/avatar7.jpg?1404026721" alt="" />
+                            </div>
+                            <div class="tile-text">
+                                Philip Ericsson
+                                <small>123-123-3210</small>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="tile divider-full-bleed">
+                        <div class="tile-content">
+                            <div class="tile-text"><strong>S</strong></div>
+                        </div>
+                    </li>
+                    <li class="tile">
+                        <a class="tile-content ink-reaction" href="#offcanvas-chat" data-toggle="offcanvas" data-backdrop="false">
+                            <div class="tile-icon">
+                                <img src="../../assets/img/avatar10.jpg?1404026762" alt="" />
+                            </div>
+                            <div class="tile-text">
+                                Samuel Parsons
+                                <small>123-123-3210</small>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div><!--end .offcanvas-body -->
+        </div><!--end .offcanvas-pane -->
+        <!-- END OFFCANVAS SEARCH -->
+
+        <!-- BEGIN OFFCANVAS CHAT -->
+        <div id="offcanvas-chat" class="offcanvas-pane style-default-light width-12">
+            <div class="offcanvas-head style-default-bright">
+                <header class="text-primary">Chat with Ann Laurens</header>
+                <div class="offcanvas-tools">
+                    <a class="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas">
+                        <i class="md md-close"></i>
+                    </a>
+                    <a class="btn btn-icon-toggle btn-default-light pull-right" href="#offcanvas-search" data-toggle="offcanvas" data-backdrop="false">
+                        <i class="md md-arrow-back"></i>
+                    </a>
+                </div>
+                <form class="form">
+                    <div class="form-group floating-label">
+                        <textarea name="sidebarChatMessage" id="sidebarChatMessage" class="form-control autosize" rows="1"></textarea>
+                        <label for="sidebarChatMessage">Leave a message</label>
+                    </div>
+                </form>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="list-chats">
+                    <li>
+                        <div class="chat">
+                            <div class="chat-avatar"><img class="img-circle" src="../../assets/img/avatar1.jpg?1403934956" alt="" /></div>
+                            <div class="chat-body">
+                                Yes, it is indeed very beautiful.
+                                <small>10:03 pm</small>
+                            </div>
+                        </div><!--end .chat -->
+                    </li>
+                    <li class="chat-left">
+                        <div class="chat">
+                            <div class="chat-avatar"><img class="img-circle" src="../../assets/img/avatar9.jpg?1404026744" alt="" /></div>
+                            <div class="chat-body">
+                                Did you see the changes?
+                                <small>10:02 pm</small>
+                            </div>
+                        </div><!--end .chat -->
+                    </li>
+                    <li>
+                        <div class="chat">
+                            <div class="chat-avatar"><img class="img-circle" src="../../assets/img/avatar1.jpg?1403934956" alt="" /></div>
+                            <div class="chat-body">
+                                I just arrived at work, it was quite busy.
+                                <small>06:44pm</small>
+                            </div>
+                            <div class="chat-body">
+                                I will take look in a minute.
+                                <small>06:45pm</small>
+                            </div>
+                        </div><!--end .chat -->
+                    </li>
+                    <li class="chat-left">
+                        <div class="chat">
+                            <div class="chat-avatar"><img class="img-circle" src="../../assets/img/avatar9.jpg?1404026744" alt="" /></div>
+                            <div class="chat-body">
+                                The colors are much better now.
+                            </div>
+                            <div class="chat-body">
+                                The colors are brighter than before.
+                                I have already sent an example.
+                                This will make it look sharper.
+                                <small>Mon</small>
+                            </div>
+                        </div><!--end .chat -->
+                    </li>
+                    <li>
+                        <div class="chat">
+                            <div class="chat-avatar"><img class="img-circle" src="../../assets/img/avatar1.jpg?1403934956" alt="" /></div>
+                            <div class="chat-body">
+                                Are the colors of the logo already adapted?
+                                <small>Last week</small>
+                            </div>
+                        </div><!--end .chat -->
+                    </li>
+                </ul>
+            </div><!--end .offcanvas-body -->
+        </div><!--end .offcanvas-pane -->
+        <!-- END OFFCANVAS CHAT -->
+
+    </div><!--end .offcanvas-->
+    <!-- END OFFCANVAS RIGHT -->
+
+</div><!--end #base-->
+<!-- END BASE -->
+
+<!-- BEGIN JAVASCRIPT -->
+<script src="../../assets/js/libs/jquery/jquery-1.11.2.min.js"></script>
+<script src="../../assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+<script src="../../assets/js/libs/bootstrap/bootstrap.min.js"></script>
+<script src="../../assets/js/libs/spin.js/spin.min.js"></script>
+<script src="../../assets/js/libs/autosize/jquery.autosize.min.js"></script>
+<script src="../../assets/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
+<script src="../../assets/js/core/source/App.js"></script>
+<script src="../../assets/js/core/source/AppNavigation.js"></script>
+<script src="../../assets/js/core/source/AppOffcanvas.js"></script>
+<script src="../../assets/js/core/source/AppCard.js"></script>
+<script src="../../assets/js/core/source/AppForm.js"></script>
+<script src="../../assets/js/core/source/AppNavSearch.js"></script>
+<script src="../../assets/js/core/source/AppVendor.js"></script>
+<script src="../../assets/js/core/demo/Demo.js"></script>
+<!-- END JAVASCRIPT -->
+
+</body>
 </html>
