@@ -91,7 +91,7 @@
         <div class="side-nav-wrapper">
             <div class="sidebar-profile">
                 <div class="sidebar-profile-image">
-                    <img src="assets/images/profile-image.png" class="circle" alt="">
+                    <img src="{{asset('assets/images/profile-image.png')}}" class="circle" alt="">
                 </div>
                 <div class="sidebar-profile-info">
                     <a href="javascript:void(0);" class="account-settings-link">
@@ -149,7 +149,11 @@
     </aside>
 
     <main class="mn-inner inner-active-sidebar">
-        @yield('content')
+        <div class="row">
+            <div class="col s12">
+                @yield('content')
+            </div>
+        </div>
     </main>
 
 </div>
@@ -174,7 +178,6 @@
 <script src="{{asset('assets/plugins/curvedlines/curvedLines.js')}}"></script>
 <script src="{{asset('assets/plugins/peity/jquery.peity.min.js')}}"></script>
 <script src="{{asset('assets/js/alpha.min.js')}}"></script>
-<script src="{{asset('assets/js/pages/dashboard.js')}}"></script>
 <script src="{{asset('assets/js/pages/form_elements.js')}}"></script>
 
 </body>
