@@ -9,24 +9,83 @@
     <link href="{{asset('assets/css/custom.css')}}" rel="stylesheet" type="text/css"/>
 @endsection
 
+@section('title','Juguetes')
+
 @section('content')
+
     <div class="col s12 m12 l12">
         <br><br>
         <div class="card">
             <div class="card-content">
                 <span class="card-title"><center><font color="black" size="6">JUGUETES</font></center></span>
                 <!-- Modal Trigger -->
-                <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Registrar Juguete</a>
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+
                 <!-- Modal Structure -->
-                <div id="modal1" class="modal modal-fixed-footer">
+                <div id="modal1" class="modal">
                     <div class="modal-content">
-                        <h4>Modal Header</h4>
-                        <p>A bunch of text</p>
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">Registrar Juguetes</span><br>
+                                <div class="row">
+                                    <form class="col s12">
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <i class="material-icons prefix">account_circle</i>
+                                                <input id="idtoy" type="text" class="validate">
+                                                <label for="idtoy">Código Juguete</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <i class="material-icons prefix">phone</i>
+                                                <input id="name" type="tel" class="validate">
+                                                <label for="name">Nombre</label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="row">
+                                    <form class="col s12">
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <i class="material-icons prefix">account_circle</i>
+                                                <input id="price" type="text" class="validate">
+                                                <label for="price">Precio</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <i class="material-icons prefix">phone</i>
+                                                <input id="description" type="tel" class="validate">
+                                                <label for="description">Descripción</label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                        <div class="row">
+                                            <form action="#" class="p-v-xs">
+                                                <div class="file-field input-field">
+                                                    <div class="btn teal lighten-1">
+                                                        <span>File</span>
+                                                        <input type="file">
+                                                    </div>
+                                                    <div class="file-path-wrapper">
+                                                        <input class="file-path validate" type="text">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                <div class="row">
+                                    <center>
+                                    <a class="waves-effect waves-light btn green m-b-xs">Registrar</a>
+                                    <a class="waves-effect waves-light btn red m-b-xs">Canceclar</a>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
                     </div>
-                </div>
+
                 <br><br>
                 <table class="bordered">
                     <thead>
