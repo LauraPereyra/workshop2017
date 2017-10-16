@@ -22,8 +22,34 @@ Route::get('/catalog', 'CatalogController@index');
 
 Route::get('/catalog/dataTable', 'CatalogController@indexDataTable');
 
-Route::get('/supplierorder', 'SupplierOrderController@index');
-
-Route::get('/supplierorder/dataTable', 'SupplierOrderController@indexDataTable');
-
 Route::resource('/toyCreate','ToysController');
+
+Route::get('/supplierorder', [
+    'uses' => 'SupplierOrderController@Index',
+    'as' => 'supplierorder.index'
+]);
+
+Route::post('/supplierorder/store', [
+    'uses' => 'SupplierOrderController@store',
+    'as'   => 'supplierorder.store'
+]);
+
+Route::get('supplierorder/create', [
+    'uses' => 'SupplierOrderController@create',
+    'as'   => 'supplierorder.create'
+]);
+
+Route::get('supplierorder/{id}/destroy', [
+    'uses' => 'SupplierOrderController@destroy',
+    'as'   => 'supplierorder.destroy'
+]);
+
+Route::get('supplierorder/{id}/edit', [
+    'uses' => 'SupplierOrderController@edit',
+    'as'   => 'supplierorder.edit'
+]);
+
+Route::put('supplierorder/update', [
+    'uses' => 'SupplierOrderController@update',
+    'as'   => 'supplierorder.update'
+]);

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\SupplierOrder;
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\Orders;
 
 class SupplierOrderController extends Controller
 {
@@ -14,13 +15,13 @@ class SupplierOrderController extends Controller
      */
     public function index()
     {
-        return view('supplierorder.index');
+        $supplierorders = Orders::orderby('id', 'ASC')->paginate(5);
+        return view('supplierorder.index')->with('supplierorders', $supplierorders);
     }
 
-    public function indexDataTable()
+    public function anyData()
     {
-        $orderList = SupplierOrder::all();
-        return response()->json($orderList);
+        return Datatables::of(User::query())->make(true);
     }
 
     /**
@@ -30,7 +31,7 @@ class SupplierOrderController extends Controller
      */
     public function create()
     {
-        //
+        return view('supplierorder.create');
     }
 
     /**
@@ -41,7 +42,10 @@ class SupplierOrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //$supplierorders = new Orders($request->except('_token'));
+        dd($request->except('_token'));
+        //$supplierorders ->save();
+        //dd('Usuario creado ');
     }
 
     /**
@@ -63,7 +67,8 @@ class SupplierOrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $supplierorders = Orders::find($id);
+        return view('supplierorder.edit')->with('supplierorders', $supplierorders);
     }
 
     /**
@@ -75,7 +80,7 @@ class SupplierOrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd($request->all());
     }
 
     /**
@@ -86,6 +91,10 @@ class SupplierOrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $supplierorders = Orders::find($id);
+        //dd($supplierorders);
+        $supplierorders->delete();
+
+        return redirect()->route('supplierorder.index');
     }
 }
