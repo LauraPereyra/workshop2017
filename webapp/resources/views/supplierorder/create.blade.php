@@ -8,7 +8,12 @@
 
             <div class="form-group col s12 m6 l3">
                 {!! Form::label('supplier', 'Proveedor') !!}
-                {!! Form::select('supplier', ['1' => 'Proveedor 1', '2' => 'Proveedor 2'], null, ['class' => 'form-control', 'placeholder' => 'Selecciona un proveedor', 'required']) !!}
+                {!! Form::select('supplier', [
+                '1' => 'Proveedor 1',
+                '2' => 'Proveedor 2',
+                '3' => 'Proveedor 3',
+                '4' => 'Proveedor 4'
+                ], null, ['class' => 'form-control', 'placeholder' => 'Selecciona un proveedor', 'required']) !!}
             </div>
 
             <div class="form-group col s12 m6 l3">
@@ -28,7 +33,7 @@
 
             <div class="form-group col col s12">
                 {!! Form::label('order_status', 'Estado del Pedido') !!}
-                {!! Form::select('order_status', ['pendiente' => 'Pendiente', 'atrasado' => 'Atrasado', 'entregado' => 'Entregado'], null, ['class' => 'form-control', 'placeholder' => 'Seleccionar estado', 'required']) !!}
+                {!! Form::select('order_status', ['pendiente' => 'Pendiente', 'atrasado' => 'Atrasado', 'entregado' => 'Entregado'], 'pendiente', ['class' => 'form-control', 'placeholder' => 'Seleccionar estado', 'required']) !!}
             </div>
         <br>
             <div class="form-group col col s12">

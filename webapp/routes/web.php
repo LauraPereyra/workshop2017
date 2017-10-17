@@ -28,7 +28,7 @@ Route::get('/', 'MagazineController@index');
 Route::get('/toy/create','ToysController@create');
 Route::post('/toy/store','ToysController@store');
 
-/*Supplier routes*/
+/*Supplier Order routes*/
 
 Route::get('/supplierorder', [
     'uses' => 'SupplierOrderController@Index',
@@ -58,4 +58,37 @@ Route::get('supplierorder/{id}/edit', [
 Route::put('supplierorder/{id}', [
     'uses' => 'SupplierOrderController@update',
     'as'   => 'supplierorder.update'
+]);
+
+/*Supplier routes*/
+
+Route::get('/supplier', [
+    'uses' => 'SupplierController@index',
+    'as' => 'supplier.index'
+
+]);
+
+Route::post('/supplier/store', [
+    'uses' => 'SupplierController@store',
+    'as'   => 'supplier.store'
+]);
+
+Route::get('supplier/create', [
+    'uses' => 'SupplierController@create',
+    'as'   => 'supplier.create'
+]);
+
+Route::get('supplier/{id}/destroy', [
+    'uses' => 'SupplierController@destroy',
+    'as'   => 'supplier.destroy'
+]);
+
+Route::get('supplier/{id}/edit', [
+    'uses' => 'SupplierController@edit',
+    'as'   => 'supplier.edit'
+]);
+
+Route::put('supplier/{id}', [
+    'uses' => 'SupplierController@update',
+    'as'   => 'supplier.update'
 ]);

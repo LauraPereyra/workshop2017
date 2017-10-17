@@ -5,65 +5,6 @@
     <br>
     <a href="{{ route('supplierorder.create') }}" class="waves-effect waves-light btn">Agregar</a>
 
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-        <div class="row">
-            <h4>Creacion de Pedido</h4>
-            <form action="/hola.php">
-                <div class="row">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s12 m6 l3">
-                                <select name="supplier">
-                                    <option value="" disabled selected>Supplier</option>
-                                    <option value="1">Proveedor 1</option>
-                                    <option value="2">Proveedor 2</option>
-                                    <option value="3">Proveedor 3</option>
-                                </select>
-                                <label>Proveedor</label>
-                            </div>
-                            <div class="input-field col s12 m6 l3">
-                                <input type="text" name="order_limit_date" class="datepicker">
-                                <label for="order_limit_date">Fecha limite de llegada</label>
-                            </div>
-                            <div class="input-field col s12 m6 l3">
-                                <select name="matrix_house">
-                                    <option value="" disabled selected>Matrix House</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                                <label>Casa matriz</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <select name="employee">
-                                    <option value="" disabled selected>Encargado del pedido</option>
-                                    <option value="1">Carlos Martinez</option>
-                                    <option value="2">Joel Rojas</option>
-                                    <option value="3">Saul Quiroz</option>
-                                </select>
-                                <label>Encargado</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <select name="order_status">
-                                    <option value="" disabled selected>Estado del pedido</option>
-                                    <option value="1">Pendiente</option>
-                                    <option value="2">Atrasado</option>
-                                    <option value="3">Entregado</option>
-                                </select>
-                                <label>Estado</label>
-                            </div>
-                        </div>
-                        <input class="waves-effect waves-light btn" type="submit" value="Crear">
-                    </form>
-                </div>
-
-            </form>
-        </div>
-    </div>
-    <br>
-
-
     <table class="striped">
         <thead>
         <th>Id</th>

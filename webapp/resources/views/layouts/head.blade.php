@@ -115,6 +115,7 @@
 
             <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
                 <li class="no-padding active"><a class="waves-effect waves-grey active" href="catalog"><i class="material-icons">settings_input_svideo</i>Inicio</a></li>
+                <li class="no-padding active"><a class="waves-effect waves-grey active" href="{{ route('supplier.index') }}"><i class="material-icons">perm_contact_calendar</i>Poveedores</a></li>
                 <li class="no-padding active"><a class="waves-effect waves-grey active" href="{{ route('supplierorder.index') }}"><i class="material-icons">shopping_cart</i>Pedidos proveedor</a></li>
                 <li class="no-padding">
                     <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">games</i>Juguetes<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
