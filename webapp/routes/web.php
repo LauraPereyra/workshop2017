@@ -15,14 +15,18 @@
     return view('welcome');
 });*/
 
-
-Route::get('/', 'MagazineController@index');
-
 Route::get('/catalog', 'CatalogController@index');
 
 Route::get('/catalog/dataTable', 'CatalogController@indexDataTable');
 
+/*ruta magazine*/
+Route::get('/', 'MagazineController@index');
+
+/*Toys routes*/
+
 Route::resource('/toyCreate','ToysController');
+
+/*Supplier routes*/
 
 Route::get('/supplierorder', [
     'uses' => 'SupplierOrderController@Index',

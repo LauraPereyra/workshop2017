@@ -15,105 +15,54 @@
 
     <div class="col s12 m12 l12">
         <br><br>
+        {!! Form::open() !!}
         <div class="card">
             <div class="card-content">
-                <span class="card-title"><center><font color="black" size="6">JUGUETES</font></center></span>
-                <!-- Modal Trigger -->
-                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
-
-                <!-- Modal Structure -->
-                <div id="modal1" class="modal">
-                    <div class="modal-content">
-                        <div class="card">
-                            <div class="card-content">
-                                <span class="card-title">Registrar Juguetes</span><br>
-                                <div class="row">
-                                    <form class="col s12">
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <i class="material-icons prefix">account_circle</i>
-                                                <input id="idtoy" type="text" class="validate">
-                                                <label for="idtoy">Código Juguete</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <i class="material-icons prefix">phone</i>
-                                                <input id="name" type="tel" class="validate">
-                                                <label for="name">Nombre</label>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-
-                                <div class="row">
-                                    <form class="col s12">
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <i class="material-icons prefix">account_circle</i>
-                                                <input id="price" type="text" class="validate">
-                                                <label for="price">Precio</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <i class="material-icons prefix">phone</i>
-                                                <input id="description" type="tel" class="validate">
-                                                <label for="description">Descripción</label>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                        <div class="row">
-                                            <form action="#" class="p-v-xs">
-                                                <div class="file-field input-field">
-                                                    <div class="btn teal lighten-1">
-                                                        <span>File</span>
-                                                        <input type="file">
-                                                    </div>
-                                                    <div class="file-path-wrapper">
-                                                        <input class="file-path validate" type="text">
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-
-                                <div class="row">
-                                    <center>
-                                    <a class="waves-effect waves-light btn green m-b-xs">Registrar</a>
-                                    <a class="waves-effect waves-light btn red m-b-xs">Canceclar</a>
-                                    </center>
-                                </div>
+                <span class="card-title"><font size="4"><center>REGISTRO JUGUETES</center></font> </span><br>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">vpn_key</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Código</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">loyalty</i>
+                                <input id="icon_telephone" type="tel" class="validate">
+                                <label for="icon_telephone">Nombre</label>
                             </div>
                         </div>
-                    </div>
-                    </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">payment</i>
+                                <input id="icon_telephone" type="tel" class="validate">
+                                <label for="icon_telephone">Precio</label>
+                            </div>
+                             <div class="input-field col s6">
+                                <i class="material-icons prefix">description</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Descripción</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
 
-                <br><br>
-                <table class="bordered">
-                    <thead>
-                    <tr>
-                        <th data-field="id">Código</th>
-                        <th data-field="name">Nombre</th>
-                        <th data-field="price">Precio</th>
-                        <th data-field="price">Descripción</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Alvin</td>
-                        <td>Eclair</td>
-                        <td>$0.87</td>
-                        <td>asdasd</td>
-                    </tr>
-                    <tr>
-                        <td>Alvin</td>
-                        <td>Eclair</td>
-                        <td>$0.87</td>
-                        <td>asdasd</td>
-                    </tr>
+                <div class="row">
+                    <center>
+                        <a class="waves-effect waves-light btn green m-b-xs">Registrar</a>
+                        <a class="waves-effect waves-light btn red m-b-xs">Cancelar</a>
+                    </center>
+                </div>
 
-                    </tbody>
-                </table>
             </div>
         </div>
+        {!! Form::close() !!}
+
     </div>
 
 @endsection

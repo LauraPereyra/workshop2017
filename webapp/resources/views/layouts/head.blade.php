@@ -120,7 +120,7 @@
                     <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">games</i>Juguetes<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a href="mailbox.html">Registrar</a></li>
+                            <li><a href="{{ url('/toyCreate/create') }}">Registrar</a></li>
                             <li><a href="search.html">Search</a></li>
                             <li><a href="todo.html">Todo</a></li>
                         </ul>
