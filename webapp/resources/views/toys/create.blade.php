@@ -21,32 +21,28 @@
             <div class="card-content">
                 <span class="card-title"><font size="4"><center>REGISTRO JUGUETES</center></font> </span><br>
                 <div class="row">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <i class="material-icons prefix">vpn_key</i>
-                                <input type="text" class="validate" id="idtoy" name="idtoy">
-                                <label for="icon_prefix">Código</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <i class="material-icons prefix">loyalty</i>
-                                <input type="text" class="validate" id="name" name="name">
-                                <label for="icon_telephone">Nombre</label>
-                            </div>
-                        </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">vpn_key</i>
+                        <input type="text" class="validate" id="idtoy" name="idtoy">
+                        <label for="icon_prefix">Código</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">loyalty</i>
+                        <input type="text" class="validate" id="name" name="name">
+                        <label for="icon_telephone">Nombre</label>
+                    </div>
                 </div>
                 <div class="row">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <i class="material-icons prefix">payment</i>
-                                <input type="number" class="validate" id="price" name="price">
-                                <label for="icon_telephone">Precio</label>
-                            </div>
-                             <div class="input-field col s6">
-                                <i class="material-icons prefix">description</i>
-                                 <input type="text" class="validate" id="description" name="description">
-                                <label for="icon_prefix">Descripción</label>
-                            </div>
-                        </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">payment</i>
+                        <input type="number" class="validate" id="price" name="price">
+                        <label for="icon_telephone">Precio</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">description</i>
+                        <input type="text" class="validate" id="description" name="description">
+                        <label for="icon_prefix">Descripción</label>
+                    </div>
                 </div>
 
                 <div class="row">
