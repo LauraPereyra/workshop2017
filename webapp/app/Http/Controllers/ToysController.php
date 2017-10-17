@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Table;
+use Illuminate\Support\Facades\DB;
 
 class ToysController extends Controller
 {
@@ -23,7 +25,9 @@ class ToysController extends Controller
      */
     public function create()
     {
-        return view('toys.create');
+
+        $toys = DB::table('toys')->get();
+        return view('toys.create', compact('toys'));
     }
 
     /**
@@ -34,7 +38,24 @@ class ToysController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $idtoy          = $request->input('idtoy');
+        $name           = $request->input('name');
+        $description    = $request->input('description');
+        $price          = $request->input('price');
+        $img            = '123';
+
+        DB::table('toys')->insert([
+            'idtoy' =>  $idtoy,
+            'name' => $name,
+            'description' => $description,
+            'price' => $price,
+            'image' => $img
+        ]);
+
+        return view('toys.create');
+
+
     }
 
     /**

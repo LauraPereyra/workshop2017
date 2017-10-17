@@ -15,53 +15,52 @@
 
     <div class="col s12 m12 l12">
         <br><br>
-        {!! Form::open() !!}
+        <form class="col s12" method="post" id="createToy" action="{{ url('/toy/store') }}">
+            {{ csrf_field() }}
         <div class="card">
             <div class="card-content">
                 <span class="card-title"><font size="4"><center>REGISTRO JUGUETES</center></font> </span><br>
                 <div class="row">
-                    <form class="col s12">
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">vpn_key</i>
-                                <input id="icon_prefix" type="text" class="validate">
+                                <input type="text" class="validate" id="idtoy" name="idtoy">
                                 <label for="icon_prefix">Código</label>
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">loyalty</i>
-                                <input id="icon_telephone" type="tel" class="validate">
+                                <input type="text" class="validate" id="name" name="name">
                                 <label for="icon_telephone">Nombre</label>
                             </div>
                         </div>
-                    </form>
                 </div>
                 <div class="row">
-                    <form class="col s12">
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">payment</i>
-                                <input id="icon_telephone" type="tel" class="validate">
+                                <input type="number" class="validate" id="price" name="price">
                                 <label for="icon_telephone">Precio</label>
                             </div>
                              <div class="input-field col s6">
                                 <i class="material-icons prefix">description</i>
-                                <input id="icon_prefix" type="text" class="validate">
+                                 <input type="text" class="validate" id="description" name="description">
                                 <label for="icon_prefix">Descripción</label>
                             </div>
                         </div>
-                    </form>
                 </div>
 
                 <div class="row">
                     <center>
-                        <a class="waves-effect waves-light btn green m-b-xs">Registrar</a>
+                        <button class="waves-effect waves-light btn green m-b-xs" type="submit">Aceptar</button>
                         <a class="waves-effect waves-light btn red m-b-xs">Cancelar</a>
                     </center>
                 </div>
 
             </div>
+
         </div>
-        {!! Form::close() !!}
+        </form>
+
 
     </div>
 
