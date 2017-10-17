@@ -8,17 +8,17 @@
 
             <div class="form-group col s12 m6 l3">
                 {!! Form::label('supplier', 'Proveedor') !!}
-                {!! Form::select('supplier', ['proveedor1' => 'Proveedor 1', 'proveedor2' => 'Proveedor 2'], null, ['class' => 'form-control', 'placeholder' => 'Selecciona un proveedor', 'required']) !!}
+                {!! Form::select('supplier', ['1' => 'Proveedor 1', '2' => 'Proveedor 2'], null, ['class' => 'form-control', 'placeholder' => 'Selecciona un proveedor', 'required']) !!}
             </div>
 
             <div class="form-group col s12 m6 l3">
                 {!! Form::label('matrix_house', 'Casa Matriz') !!}
-                {!! Form::select('matrix_house', ['casa1' => 'Casa Matriz 1', 'casa2' => 'Casa Matriz 2'], null, ['class' => 'form-control', 'placeholder' => 'Selecciona casa matriz', 'required']) !!}
+                {!! Form::select('matrix_house', ['1' => 'Casa Matriz 1', '2' => 'Casa Matriz 2'], null, ['class' => 'form-control', 'placeholder' => 'Selecciona casa matriz', 'required']) !!}
             </div>
 
             <div class="form-group col s12 m6 l3">
                 {!! Form::label('order_limit_date', 'Fecha limite de entrega') !!}
-                {!! Form::date('name')  !!}
+                {!! Form::date('order_limit_date')  !!}
             </div>
 
             <div class="form-group col col s12">

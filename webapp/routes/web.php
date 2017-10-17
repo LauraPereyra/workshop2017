@@ -53,7 +53,7 @@ Route::get('supplierorder/{id}/edit', [
     'as'   => 'supplierorder.edit'
 ]);
 
-Route::put('supplierorder/update', [
+Route::put('supplierorder/{id}', [
     'uses' => 'SupplierOrderController@update',
     'as'   => 'supplierorder.update'
 ]);

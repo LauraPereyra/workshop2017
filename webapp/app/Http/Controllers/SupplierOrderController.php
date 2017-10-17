@@ -15,7 +15,7 @@ class SupplierOrderController extends Controller
      */
     public function index()
     {
-        $supplierorders = Orders::orderby('id', 'ASC')->paginate(5);
+        $supplierorders = Orders::orderby('id', 'ASC')->paginate(10);
         return view('supplierorder.index')->with('supplierorders', $supplierorders);
     }
 
@@ -42,10 +42,17 @@ class SupplierOrderController extends Controller
      */
     public function store(Request $request)
     {
-        //$supplierorders = new Orders($request->except('_token'));
-        dd($request->except('_token'));
-        //$supplierorders ->save();
-        //dd('Usuario creado ');
+        $supplierorders = new Orders($request->all());
+        $supplierorders -> order_date = now();
+        $supplierorders -> order_arrive = $request -> order_limit_date;
+        $supplierorders -> status = $request -> order_status;
+        $supplierorders -> supplier_id = $request -> supplier;
+        $supplierorders -> matrix_house_id = $request -> matrix_house;
+
+        //dd($supplierorders);
+        $supplierorders ->save();
+        //dd('Orden creada');
+        return redirect()->route('supplierorder.index');
     }
 
     /**
@@ -80,7 +87,14 @@ class SupplierOrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request->all());
+        $supplierorders = Orders::find($id);
+        $supplierorders -> order_date      = now();
+        $supplierorders -> order_arrive    = $request -> order_limit_date;
+        $supplierorders -> status          = $request -> order_status;
+        $supplierorders -> supplier_id     = $request -> supplier;
+        $supplierorders -> matrix_house_id = $request -> matrix_house;
+        $supplierorders -> save();
+        return redirect()->route('supplierorder.index');
     }
 
     /**
