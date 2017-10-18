@@ -868,11 +868,11 @@
 }
 
 .cyan {
-  background-color: #00bcd4 !important;
+  background-color: #4b4f4f !important;
 }
 
 .cyan-text {
-  color: #00bcd4 !important;
+  color: #4b4f4f !important;
 }
 
 .cyan.lighten-5 {
@@ -916,11 +916,11 @@
 }
 
 .cyan.darken-1 {
-  background-color: #00acc1 !important;
+  background-color: #4b4f4f !important;
 }
 
 .cyan-text.text-darken-1 {
-  color: #00acc1 !important;
+  color: #4b4f4f !important;
 }
 
 .cyan.darken-2 {
