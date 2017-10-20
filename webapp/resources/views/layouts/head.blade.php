@@ -18,7 +18,7 @@
     <link href="{{asset('assets/plugins/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/plugins/metrojs/MetroJs.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/plugins/weather-icons-master/css/weather-icons.min.css')}}" rel="stylesheet">
-
+    <link href="{{asset('assets/plugins/sweetalert/sweetalert.css')}}" rel="stylesheet" type="text/css"/>
 
     <!-- Theme Styles -->
     <link href="{{asset('assets/css/alpha.min.css')}}" rel="stylesheet" type="text/css"/>
@@ -181,5 +181,6 @@
 <script src="{{asset('assets/js/alpha.min.js')}}"></script>
 <script src="{{asset('assets/js/pages/form_elements.js')}}"></script>
 
+@yield('js')
 </body>
 </html>

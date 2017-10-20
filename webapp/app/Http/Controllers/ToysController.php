@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Table;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\ToyRequest;
+
 
 class ToysController extends Controller
 {
@@ -36,7 +38,7 @@ class ToysController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ToyRequest $request)
     {
 
         $idtoy          = $request->input('idtoy');
@@ -45,7 +47,7 @@ class ToysController extends Controller
         $price          = $request->input('price');
         $img            = '123';
 
-        DB::table('toys')->insert([
+        $toyCreate = DB::table('toys')->insert([
             'idtoy' =>  $idtoy,
             'name' => $name,
             'description' => $description,
@@ -53,7 +55,14 @@ class ToysController extends Controller
             'image' => $img
         ]);
 
-        return view('toys.create');
+        if($toyCreate){
+            $result = 1;
+        }
+        else{
+            $result = 0;
+        }
+
+       return response()->json(['result' => $result, 'query' => $toyCreate]);
 
 
     }
