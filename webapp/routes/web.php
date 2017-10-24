@@ -25,6 +25,7 @@ Route::get('/', 'MagazineController@index');
 
 /*Toys routes*/
 
+Route::get('/toy/list','ToysController@index');
 Route::get('/toy/create','ToysController@create');
 Route::post('/toy/store','ToysController@store');
 

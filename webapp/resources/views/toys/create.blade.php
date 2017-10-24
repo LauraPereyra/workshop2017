@@ -107,7 +107,7 @@
                     // compound rule
                 },
                 messages: {
-                    required: "Please enter your name",
+                    required: "Ingrese su nombre",
                     minlength: "Your password must be at least 5 characters long"
                 },
                 submitHandler: function(form) {

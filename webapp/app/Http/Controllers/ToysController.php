@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Toys;
 use Illuminate\Http\Request;
 use App\Table;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +18,11 @@ class ToysController extends Controller
      */
     public function index()
     {
-        //
+        $toys = Toys::All();
+        return view('toys.list',compact('toys'));
+
+
+
     }
 
     /**
