@@ -1,6 +1,16 @@
 @extends('layouts.head')
 
 @section('content')
+    @if(count($errors)>0)
+        <div class="red lighten-4">
+            <ol>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ol>
+        </div>
+    @endif
+
     <div class="row">
         <h4>Creacion de Proveedor</h4>
 
@@ -8,7 +18,7 @@
 
         <div class="form-group col s12">
             {!! Form::label('name_supplier', 'Nombre') !!}
-            {!! Form::text('name_supplier', null, ['class' => 'form-control', 'placeholder' => 'Nombre del proveedor', 'required']) !!}
+            {!! Form::text('name_supplier', null, ['class' => 'form-control', 'placeholder' => 'Nombre del proveedor']) !!}
         </div>
 
         <div class="form-group col s6">
@@ -17,17 +27,17 @@
             ['Bolivia' => 'Bolivia',
              'Peru' => 'Peru',
              'Chile' => 'Chile'],
-             'Bolivia', ['class' => 'form-control', 'placeholder' => 'Selecciona un País', 'required']) !!}
+             'Bolivia', ['class' => 'form-control', 'placeholder' => 'Selecciona un País']) !!}
         </div>
 
         <div class="form-group col m6">
             {!! Form::label('phone','Telefono') !!}
-            {!! Form::number('phone',null, ['class' => 'form-control', 'placeholder' => '2222222'], 'required') !!}
+            {!! Form::number('phone',null, ['class' => 'form-control', 'placeholder' => '2222222']) !!}
         </div>
 
         <div class="form-group col s12">
             {!! Form::label('address_supplier', 'Dirección') !!}
-            {!! Form::text('address_supplier', null, ['class' => 'form-control', 'placeholder' => 'Av. avenida # 1234 calle Calle1', 'required']) !!}
+            {!! Form::text('address_supplier', null, ['class' => 'form-control', 'placeholder' => 'Av. avenida # 1234 calle Calle1']) !!}
         </div>
 
         <br>

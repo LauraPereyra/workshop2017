@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Suppliers;
+use App\Http\Requests\SupplierRequest;
 
 class SupplierController extends Controller
 {
@@ -34,14 +35,13 @@ class SupplierController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SupplierRequest $request)
     {
         $supplier = new Suppliers($request->all());
         $supplier -> name_supplier = $request -> name_supplier;
         $supplier -> country = $request -> country;
         $supplier -> phone = $request -> phone;
         $supplier -> address_supplier = $request -> address_supplier;
-        //dd($supplier);
         $supplier ->save();
         //dd('Orden creada');
         return redirect()->route('supplier.index');
