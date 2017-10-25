@@ -27,7 +27,7 @@
         </ul>
     @endif
 
-    <div class="col s12 m12 l12">
+    <div class="col s12 m12 l12" id="toy-div">
         <br><br>
         <form class="col s12" method="post" id="createToy" action="{{ url('/toy/store') }}">
             {{ csrf_field() }}
@@ -42,19 +42,19 @@
                     </div>
                     <div class="input-field col s6">
                         <i class="material-icons prefix">loyalty</i>
-                        <input type="text" class="validate" id="name" name="name" required>
+                        <input type="text" class="validate" id="name" name="name" minlength="5" required=""  oninvalid="setCustomValidity('Por favor llene este campo')">
                         <label for="icon_telephone">Nombre</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">payment</i>
-                        <input type="number" class="validate" id="price" name="price" required>
+                        <input type="number" class="validate" id="price" name="price" required="">
                         <label for="icon_telephone">Precio</label>
                     </div>
                     <div class="input-field col s6">
                         <i class="material-icons prefix">description</i>
-                        <input type="text" class="validate" id="description" name="description" required>
+                        <input type="text" class="validate" id="description" name="description" minlength="7" required="">
                         <label for="icon_prefix">Descripción</label>
                     </div>
                 </div>
@@ -89,9 +89,13 @@
 
         $(function () {
 
-            $("#createToy").validate({
+            $('#toy-div form').validate({
                 rules: {
                     // simple rule, converted to {required:true}
+                    idtoy:{
+                        required:true,
+                        minlenht:5
+                    },
                     name: {
                         required: true,
                         minlength: 5
@@ -107,8 +111,10 @@
                     // compound rule
                 },
                 messages: {
-                    required: "Ingrese su nombre",
-                    minlength: "Your password must be at least 5 characters long"
+                    idtoy: {required:"Ingrese código del juguete"},
+                    name: {required: "Ingrese nombre del juguete"},
+                    description: {required:"Ingrese descripción del juguete"},
+                    price:{required:"Ingrese precio del juguete"}
                 },
                 submitHandler: function(form) {
                     form.submit();

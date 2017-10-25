@@ -115,15 +115,24 @@
 
             <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
                 <li class="no-padding active"><a class="waves-effect waves-grey active" href="catalog"><i class="material-icons">settings_input_svideo</i>Inicio</a></li>
-                <li class="no-padding active"><a class="waves-effect waves-grey active" href="{{ route('supplier.index') }}"><i class="material-icons">perm_contact_calendar</i>Poveedores</a></li>
-                <li class="no-padding active"><a class="waves-effect waves-grey active" href="{{ route('supplierorder.index') }}"><i class="material-icons">shopping_cart</i>Pedidos proveedor</a></li>
                 <li class="no-padding">
-                    <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">games</i>Juguetes<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                    <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">store</i>Proveedores<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="{{ route('supplier.index') }}">Proveedores</a></li>
+                            <li><a href="{{ route('supplierorder.index') }}">Pedidos proveedores</a></li>
+                            <li><a href="todo.html">Todo</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="no-padding">
+                    <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">loyalty</i>Juguetes<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                     <div class="collapsible-body">
                         <ul>
                             <li><a href="{{ url('/toy/create') }}">Registrar</a></li>
-                            <li><a href="search.html">Search</a></li>
-                            <li><a href="todo.html">Todo</a></li>
+                            <li><a href="{{ url('/toy/list') }}">Lista</a></li>
+                            <li><a href="{{ url('/toy/update') }}">Todo</a></li>
                         </ul>
                     </div>
                 </li>
