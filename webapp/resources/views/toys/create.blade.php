@@ -58,6 +58,10 @@
                         <label for="icon_prefix">Descripción</label>
                     </div>
                 </div>
+                <div class="row">
+                        <input type="file" name="avatar">
+                </div>
+
                 <br>
 
                 <div class="row">

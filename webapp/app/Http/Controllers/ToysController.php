@@ -80,7 +80,10 @@ class ToysController extends Controller
      */
     public function show($id)
     {
-        //
+        $toy = DB::table('toys')
+            ->where('id',$id)
+            ->first();
+        return view('toys.edit',compact(['toy']));
     }
 
     /**
@@ -101,9 +104,19 @@ class ToysController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $toy = DB::table('toys')
+            ->where('id',$request->input('id'))
+            ->update([
+                'idtoy' => $request->input('idtoy'),
+                'name'=> $request->input('name'),
+                'price'=> $request->input('price'),
+                'description'=> $request->input('description'),
+                'image'=> ''
+            ]);
+        $toys = Toys::All();
+        return view('toys.list',compact('toys'));
     }
 
     /**
