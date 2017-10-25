@@ -28,6 +28,8 @@ Route::get('/', 'MagazineController@index');
 Route::get('/toy/list','ToysController@index');
 Route::get('/toy/create','ToysController@create');
 Route::post('/toy/store','ToysController@store');
+Route::get('/toy/{id}','ToysController@show');
+Route::post('/toy/update','ToysController@update');
 
 /*Supplier Order routes*/
 
