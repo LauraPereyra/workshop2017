@@ -1,163 +1,317 @@
 <!DOCTYPE html>
-<html>
-<title>Juguetería</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<body id="myPage">
-
-
-
-<!-- Navbar -->
-<div class="w3-top">
-    <div class="w3-bar w3-theme-d2 w3-left-align">
-        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-        <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Inicio</a>
-        <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Catálogo</a>
-    </div>
-
-    <!-- Navbar on small screens -->
-    <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-        <a href="#team" class="w3-bar-item w3-button">Catálogo</a>
-    </div>
-</div>
-
-<!-- Image Header -->
-<div class="w3-display-container w3-animate-opacity">
-    <img src="{{asset('assets/images/fondo.jpg')}}" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
-    <div class="w3-container w3-display-bottomleft w3-margin-bottom">
-        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">INFO.</button>
-    </div>
-</div>
-
-<!-- Modal -->
-<div id="id01" class="w3-modal">
-    <div class="w3-modal-content w3-card-4 w3-animate-top">
-        <header class="w3-container w3-teal w3-display-container">
-            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-            <h4>Oh snap! We just showed you a modal..</h4>
-            <h5>Because we can <i class="fa fa-smile-o"></i></h5>
+<!-- templatemo 413 flip turn -->
+<!--
+Flip Turn Template
+http://www.templatemo.com/tm-413-flip-turn
+-->
+<head>
+    <title>Jugueteria</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="{{asset('assets/pagina/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('assets/pagina/css/magnific-popup.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/pagina/css/templatemo_style.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main-container">
+    <nav class="main-nav">
+        <div id="logo" class="left"><a href="#">Juguetería</a></div>
+        <ul class="nav right center-text">
+            <li class="btn active">Inicio</li>
+            <li class="btn"><a href="about.html">Sobre nosotros</a></li>
+            <li class="btn"><a href="contact.html">Contacto</a></li>
+        </ul>
+    </nav>
+    <div class="content-container">
+        <header>
+            <h1 class="center-text">Catálogo</h1>
         </header>
-        <footer class="w3-container w3-teal">
-            <p>footer</p>
-        </footer>
-    </div>
+        <div id="portfolio-content" class="center-text">
+            <div class="portfolio-page" id="page-1">
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="{{asset('assets/pagina/images/1-large.jpg')}}">
+                        <img src="{{asset('assets/pagina/images/1-small.jpg')}}" alt="image 1">
+                        <div class="detail">
+                            <h3>Wavy Road</h3>
+                            <p>Duis ac laoreet mi. Maecenas non lorem sed elit molestie tincidunt. Vestibulum tincidunt libero urna, ut dignissim purus accumsan nec.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="{{asset('assets/pagina/images/2-large.jpg')}}">
+                        <img src="{{asset('assets/pagina/images/2-small.jpg')}}" alt="image 2">
+                        <div class="detail">
+                            <h3>Rocky Mountain</h3>
+                            <p>Sed in molestie lectus. Curabitur non est neque. Maecenas id luctus ligula. Duis ac laoreet mi. Maecenas non lorem sed elit molestie tincidunt.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="{{asset('assets/pagina/images/3-large.jpg')}}">
+                        <img src="{{asset('assets/pagina/images/3-small.jpg')}}" alt="image 3">
+                        <div class="detail">
+                            <h3>Clear River</h3>
+                            <p>Duis ac laoreet mi. Maecenas non lorem sed elit molestie tincidunt. Vestibulum tincidunt libero urna, ut dignissim purus accumsan nec.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="{{asset('assets/pagina/images/4-large.jpg')}}">
+                        <img src="{{asset('assets/pagina/images/4-small.jpg')}}" alt="image 4">
+                        <div class="detail">
+                            <h3>Rounded Flower</h3>
+                            <p>Sed in molestie lectus. Curabitur non est neque. Maecenas id luctus ligula. Mauris dignissim ante eu arcu ultricies, at sodales orci aliquet.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="{{asset('assets/pagina/images/5-large.jpg')}}">
+                        <img src="{{asset('assets/pagina/images/5-small.jpg')}}" alt="image 5">
+                        <div class="detail">
+                            <h3>Bustling City</h3>
+                            <p>Duis ac laoreet mi. Vestibulum tincidunt libero urna, ut dignissim purus accumsan nec. Sed in molestie lectus. Curabitur non est neque.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="{{asset('assets/pagina/images/6-large.jpg')}}">
+                        <img src="{{asset('assets/pagina/images/6-small.jpg')}}" alt="image 6">
+                        <div class="detail">
+                            <h3>Retired Leaves</h3>
+                            <p>Sed in molestie lectus. Curabitur non est neque. Maecenas id luctus ligula. Mauris dignissim ante eu arcu ultricies, at sodales orci aliquet.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="{{asset('assets/pagina/images/7-large.jpg')}}">
+                        <img src="{{asset('assets/pagina/images/7-small.jpg')}}" alt="image 7">
+                        <div class="detail">
+                            <h3>Clean Design</h3>
+                            <p>Vestibulum tincidunt libero urna, ut dignissim purus accumsan nec. Maecenas id luctus ligula. Mauris dignissim ante eu arcu ultricies, at sodales orci aliquet.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="{{asset('assets/pagina/images/8-large.jpg')}}">
+                        <img src="{{asset('assets/pagina/images/8-small.jpg')}}" alt="image 8">
+                        <div class="detail">
+                            <h3>Rock Solid</h3>
+                            <p>Duis ac laoreet mi. Maecenas non lorem sed elit molestie tincidunt. Mauris dignissim ante eu arcu ultricies, at sodales orci aliquet.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="portfolio-page" id="page-2" style="display:none;">
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="{{asset('assets/pagina/images/8-large.jpg')}}">
+                        <img src="{{asset('assets/pagina/images/8-small.jpg')}}" alt="image 8">
+                        <div class="detail">
+                            <h3>Wavy Road</h3>
+                            <p>Duis ac laoreet mi. Maecenas non lorem sed elit molestie tincidunt. Sed in molestie lectus. Curabitur non est neque.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="{{asset('assets/pagina/images/7-large.jpg')}}">
+                        <img src="{{asset('assets/pagina/images/7-small.jpg')}}" alt="image 7">
+                        <div class="detail">
+                            <h3>Rocky Mountain</h3>
+                            <p>Sed in molestie lectus. Curabitur non est neque. Maecenas id luctus ligula. Mauris dignissim ante eu arcu ultricies, at sodales orci aliquet. Duis ac laoreet mi.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="images/6-large.jpg">
+                        <img src="images/6-small.jpg" alt="image 6">
+                        <div class="detail">
+                            <h3>Clear River</h3>
+                            <p>Duis ac laoreet mi. Maecenas non lorem sed elit molestie tincidunt. Vestibulum tincidunt libero urna, ut dignissim purus accumsan nec. Sed in molestie lectus.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="images/5-large.jpg">
+                        <img src="images/5-small.jpg" alt="image 5">
+                        <div class="detail">
+                            <h3>Rounded Flower</h3>
+                            <p>Sed in molestie lectus. Curabitur non est neque. Maecenas id luctus ligula. Mauris dignissim ante eu arcu ultricies, at sodales orci aliquet.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="images/4-large.jpg">
+                        <img src="images/4-small.jpg" alt="image 4">
+                        <div class="detail">
+                            <h3>Bustling City</h3>
+                            <p>Duis ac laoreet mi. Maecenas non lorem sed elit molestie tincidunt. Vestibulum tincidunt libero urna, ut dignissim purus accumsan nec.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="images/3-large.jpg">
+                        <img src="images/3-small.jpg" alt="image 3">
+                        <div class="detail">
+                            <h3>Retired Leaves</h3>
+                            <p>Sed in molestie lectus. Curabitur non est neque. Maecenas id luctus ligula. Mauris dignissim ante eu arcu ultricies, at sodales orci aliquet.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="images/2-large.jpg">
+                        <img src="images/2-small.jpg" alt="image 2">
+                        <div class="detail">
+                            <h3>Clean Design</h3>
+                            <p>Vestibulum tincidunt libero urna, ut dignissim purus accumsan nec. Sed in molestie lectus. Curabitur non est neque. Maecenas id luctus ligula.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="images/1-large.jpg">
+                        <img src="images/1-small.jpg" alt="image 1">
+                        <div class="detail">
+                            <h3>Rock Solid</h3>
+                            <p>Duis ac laoreet mi. Maecenas non lorem sed elit molestie tincidunt. Maecenas id luctus ligula. Mauris dignissim ante eu arcu ultricies, at sodales orci aliquet.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="portfolio-page" id="page-3" style="display:none;">
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="images/3-large.jpg">
+                        <img src="images/3-small.jpg" alt="image 3">
+                        <div class="detail">
+                            <h3>Wavy Road</h3>
+                            <p>Duis ac laoreet mi. Maecenas non lorem sed elit molestie tincidunt. Vestibulum tincidunt libero urna, ut dignissim purus accumsan nec. Curabitur non est neque.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="images/2-large.jpg">
+                        <img src="images/2-small.jpg" alt="image 2">
+                        <div class="detail">
+                            <h3>Rocky Mountain</h3>
+                            <p>Sed in molestie lectus. Curabitur non est neque. Maecenas id luctus ligula. Mauris dignissim ante eu arcu ultricies, at sodales orci aliquet. Duis ac laoreet mi.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="images/4-large.jpg">
+                        <img src="images/4-small.jpg" alt="image 4">
+                        <div class="detail">
+                            <h3>Clear River</h3>
+                            <p>Duis ac laoreet mi. Maecenas non lorem sed elit molestie tincidunt. Vestibulum tincidunt libero urna, ut dignissim purus accumsan nec. Sed in molestie lectus.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="images/1-large.jpg">
+                        <img src="images/1-small.jpg" alt="image 1">
+                        <div class="detail">
+                            <h3>Rounded Flower</h3>
+                            <p>Sed in molestie lectus. Curabitur non est neque. Maecenas id luctus ligula. Mauris dignissim ante eu arcu ultricies, at sodales orci aliquet. </p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="images/5-large.jpg">
+                        <img src="images/5-small.jpg" alt="image 5">
+                        <div class="detail">
+                            <h3>Bustling City</h3>
+                            <p>Duis ac laoreet mi. Maecenas non lorem sed elit molestie tincidunt. Vestibulum tincidunt libero urna, ut dignissim purus accumsan nec. Curabitur non est neque.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="images/6-large.jpg">
+                        <img src="images/6-small.jpg" alt="image 22">
+                        <div class="detail">
+                            <h3>Retired Leaves</h3>
+                            <p>Sed in molestie lectus. Curabitur non est neque. Maecenas id luctus ligula. Mauris dignissim ante eu arcu ultricies, at sodales orci aliquet.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="images/8-large.jpg">
+                        <img src="images/8-small.jpg" alt="image 8">
+                        <div class="detail">
+                            <h3>Clean Design</h3>
+                            <p>Vestibulum tincidunt libero urna, ut dignissim purus accumsan nec. Sed in molestie lectus. Curabitur non est neque. Maecenas id luctus ligula.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-group">
+                    <a class="portfolio-item" href="images/7-large.jpg">
+                        <img src="images/7-small.jpg" alt="image 7">
+                        <div class="detail">
+                            <h3>Rock Solid</h3>
+                            <p>Duis ac laoreet mi. Maecenas non lorem sed elit molestie tincidunt. Maecenas id luctus ligula. Mauris dignissim ante eu arcu ultricies, at sodales orci aliquet.</p>
+                            <span class="btn">View</span>
+                        </div>
+                    </a>
+                </div>
+            </div> <!-- page 3 -->
+            <div class="pagination">
+                <ul class="nav">
+                    <li class="active">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </div>
+        </div>
+    </div>	<!-- /.content-container -->
+    <footer>
+        <p>Copyright &copy; Taller de Sistemas</p>
+        <div class="social right">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+        </div>
+    </footer>
 </div>
-
-<!-- Team Container -->
-<div class="w3-container w3-padding-64 w3-center" id="team">
-    <h2>CATÁLOGO</h2>
-    <p>Juguetes que ofrecemos:</p>
-
-    <!-- !PAGE CONTENT! -->
-    <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-
-        <!-- First Photo Grid-->
-        <div class="w3-row-padding w3-padding-16 w3-center" id="food">
-            <div class="w3-quarter">
-                <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
-                <h3>The Perfect Sandwich, A Real NYC Classic</h3>
-                <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            </div>
-            <div class="w3-quarter">
-                <img src="/w3images/steak.jpg" alt="Steak" style="width:100%">
-                <h3>Let Me Tell You About This Steak</h3>
-                <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            </div>
-            <div class="w3-quarter">
-                <img src="/w3images/cherries.jpg" alt="Cherries" style="width:100%">
-                <h3>Cherries, interrupted</h3>
-                <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-                <p>What else?</p>
-            </div>
-            <div class="w3-quarter">
-                <img src="/w3images/wine.jpg" alt="Pasta and Wine" style="width:100%">
-                <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
-                <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            </div>
-        </div>
-
-        <!-- Second Photo Grid-->
-        <div class="w3-row-padding w3-padding-16 w3-center">
-            <div class="w3-quarter">
-                <img src="/w3images/popsicle.jpg" alt="Popsicle" style="width:100%">
-                <h3>All I Need Is a Popsicle</h3>
-                <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            </div>
-            <div class="w3-quarter">
-                <img src="/w3images/salmon.jpg" alt="Salmon" style="width:100%">
-                <h3>Salmon For Your Skin</h3>
-                <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            </div>
-            <div class="w3-quarter">
-                <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
-                <h3>The Perfect Sandwich, A Real Classic</h3>
-                <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            </div>
-            <div class="w3-quarter">
-                <img src="/w3images/croissant.jpg" alt="Croissant" style="width:100%">
-                <h3>Le French</h3>
-                <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            </div>
-        </div>
-
-        <!-- Pagination -->
-        <div class="w3-center w3-padding-32">
-            <div class="w3-bar">
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-                <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-            </div>
-        </div>
-
-</div>
-
-
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
-    <h4>Siguenos</h4>
-    <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
-    <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
-    <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
-
-    <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
-        <span class="w3-text w3-padding w3-teal w3-hide-small">Subir</span>
-        <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
-    <i class="fa fa-chevron-circle-up"></i></span></a>
-    </div>
-</footer>
-
-<script>
-    // Script for side navigation
-    function w3_open() {
-        var x = document.getElementById("mySidebar");
-        x.style.width = "300px";
-        x.style.paddingTop = "10%";
-        x.style.display = "block";
-    }
-
-    // Close side navigation
-    function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-    }
-
-    // Used to toggle the menu on smaller screens when clicking on the menu button
-    function openNav() {
-        var x = document.getElementById("navDemo");
-        if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-        }
-    }
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/modernizr.2.5.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="js/templatemo_script.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.pagination li').click(changePage);
+        $('.portfolio-item').magnificPopup({
+            type: 'image',
+            gallery:{
+                enabled:true
+            }
+        });
+    });
 </script>
-
 </body>
 </html>
-
