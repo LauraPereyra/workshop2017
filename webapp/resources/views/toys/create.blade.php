@@ -58,9 +58,7 @@
                         <label for="icon_prefix">Descripción</label>
                     </div>
                 </div>
-                <div class="row">
-                        <input name="image" id="image" type="file">
-                </div>
+
 
                 <br>
 
@@ -98,7 +96,7 @@
                     // simple rule, converted to {required:true}
                     idtoy:{
                         required:true,
-                        minlenht:5
+                        minlenght:5
                     },
                     name: {
                         required: true,

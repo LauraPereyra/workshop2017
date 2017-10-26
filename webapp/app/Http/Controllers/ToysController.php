@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Table;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\ToyRequest;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
 
 
 class ToysController extends Controller
@@ -46,16 +46,16 @@ class ToysController extends Controller
      */
     public function store(ToyRequest $request)
     {
+
         $idtoy          = $request->input('idtoy');
         $name           = $request->input('name');
         $description    = $request->input('description');
         $price          = $request->input('price');
-        $img            = $request->put('file')->store('storage');
+        $img            = '123';
+        //$img            = $request->file('image');
 
-        $input['image'] = time().'.'.$img->getClientOriginalExtension();
-        $destinationPath = public_path('/storage');
-        $img->move($destinationPath, $input['image']);
-
+        //$nombre = $img->getClientOriginalName();
+       // \Storage::disk('local')->put($nombre,  \File::get($img));
 
         $toyCreate = DB::table('toys')->insert([
             'idtoy' =>  $idtoy,

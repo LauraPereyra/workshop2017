@@ -23,12 +23,9 @@ class ToyRequest extends FormRequest
      */
     public function rules()
     {
-        request()->validate([
-
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        return [
             'idtoy' => 'min:4|max:120|required',
             'name'  => 'min:5|max:120|required'
-
-        ]);
+        ];
     }
 }
