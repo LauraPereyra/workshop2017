@@ -53,9 +53,10 @@ class ToysController extends Controller
         $price          = $request->input('price');
         $img            = '123';
         //$img            = $request->file('image');
+        //$img = $request->file('image')->store('storage');
 
         //$nombre = $img->getClientOriginalName();
-       // \Storage::disk('local')->put($nombre,  \File::get($img));
+       //\Storage::disk('local')->put($nombre,  \File::get($img));
 
         $toyCreate = DB::table('toys')->insert([
             'idtoy' =>  $idtoy,

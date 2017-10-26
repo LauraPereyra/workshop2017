@@ -58,6 +58,11 @@
                         <label for="icon_prefix">Descripción</label>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input type="file" id="image" name="image">
+                    </div>
+                </div>
 
 
                 <br>
@@ -95,20 +100,20 @@
                 rules: {
                     // simple rule, converted to {required:true}
                     idtoy:{
-                        required:true,
-                        minlenght:5
+                        required:true
+                        //minlenght:5
                     },
                     name: {
-                        required: true,
-                        minlength: 5
+                        required: true
+                        //minlength: 5
                     },
                     description:{
-                        required:true,
-                        minlength: 7
+                        required:true
+                        //minlength: 7
                     },
                     price:{
-                        required:true,
-                        minlenght: 4
+                        required:true
+                        //minlenght: 4
                     }
                     // compound rule
                 },
