@@ -30,6 +30,7 @@ Route::get('/toy/create','ToysController@create');
 Route::post('/toy/store','ToysController@store');
 Route::get('/toy/{id}','ToysController@show');
 Route::post('/toy/update','ToysController@update');
+Route::get('toydelete/{id}','ToysController@destroy');
 
 /*Supplier Order routes*/
 

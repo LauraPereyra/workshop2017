@@ -29,7 +29,7 @@
 
     <div class="col s12 m12 l12" id="toy-div">
         <br><br>
-        <form class="col s12" method="post" id="createToy" action="{{ url('/toy/store') }}">
+        <form  class="col s12" method="post" enctype="multipart/form-data" id="createToy" action="{{ url('/toy/store') }}" >
             {{ csrf_field() }}
         <div class="card">
             <div class="card-content">
@@ -59,14 +59,14 @@
                     </div>
                 </div>
                 <div class="row">
-                        <input type="file" name="avatar">
+                        <input name="image" id="image" type="file">
                 </div>
 
                 <br>
 
                 <div class="row">
                     <center>
-                    <a class="waves-effect waves-light btn green m-b-xs btn-message"  id="savetoy">Aceptar</a>
+                    <a class="waves-effect waves-light btn green m-b-xs btn-message" id="savetoy">Aceptar</a>
                     &nbsp&nbsp;
                     <a class="waves-effect waves-light btn red m-b-xs">Cancelar</a>
                     </center>

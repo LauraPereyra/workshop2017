@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Table;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\ToyRequest;
+use Illuminate\Support\Facades\Input;
 
 
 class ToysController extends Controller
@@ -45,12 +46,16 @@ class ToysController extends Controller
      */
     public function store(ToyRequest $request)
     {
-
         $idtoy          = $request->input('idtoy');
         $name           = $request->input('name');
         $description    = $request->input('description');
         $price          = $request->input('price');
-        $img            = '123';
+        $img            = $request->put('file')->store('storage');
+
+        $input['image'] = time().'.'.$img->getClientOriginalExtension();
+        $destinationPath = public_path('/storage');
+        $img->move($destinationPath, $input['image']);
+
 
         $toyCreate = DB::table('toys')->insert([
             'idtoy' =>  $idtoy,
@@ -127,6 +132,9 @@ class ToysController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $toy = DB::table('toys')->where('id',$id)->delete();
+        $toys =Toys::All();
+        return view('toys.list',compact('toys'));
     }
+
 }

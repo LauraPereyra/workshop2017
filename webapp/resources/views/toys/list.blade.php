@@ -39,7 +39,7 @@
                                         <center>
                                         <a href="{{url('/toy/').'/'.$toy->id}}" class="btn-floating waves-effect waves-light "><i class="material-icons">edit</i></a>
                                         &nbsp&nbsp;
-                                        <a class="btn-floating waves-effect waves-light red "><i class="material-icons">delete_forever</i></a>
+                                        <a href="{{url('/toydelete/').'/'.$toy->id}}" class="btn-floating waves-effect waves-light red "><i class="material-icons">delete_forever</i></a>
                                         </center>
 
                                     </td>

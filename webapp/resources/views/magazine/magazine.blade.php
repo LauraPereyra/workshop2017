@@ -297,11 +297,11 @@ http://www.templatemo.com/tm-413-flip-turn
         </div>
     </footer>
 </div>
-<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="js/modernizr.2.5.3.min.js"></script>
-<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-<script type="text/javascript" src="js/templatemo_script.js"></script>
+<script type="text/javascript" src="{{asset('assets/pagina/js/jquery-1.11.1.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/pagina/js/jquery.easing.1.3.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/pagina/js/modernizr.2.5.3.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/pagina/js/jquery.magnific-popup.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/pagina/js/templatemo_script.js')}}"></script>
 <script type="text/javascript">
     $(function () {
         $('.pagination li').click(changePage);
