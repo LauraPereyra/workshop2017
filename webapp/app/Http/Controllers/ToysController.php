@@ -46,28 +46,23 @@ class ToysController extends Controller
      */
     public function store(ToyRequest $request)
     {
-
         $idtoy          = $request->input('idtoy');
         $name           = $request->input('name');
         $description    = $request->input('description');
         $price          = $request->input('price');
-        $img            = '123';
-        //$img            = $request->file('image');
-        //$img = $request->file('image')->store('storage');
-
-        //$nombre = $img->getClientOriginalName();
-       //\Storage::disk('local')->put($nombre,  \File::get($img));
+        $img            = '';
 
         $toyCreate = DB::table('toys')->insert([
-            'idtoy' =>  $idtoy,
-            'name' => $name,
-            'description' => $description,
-            'price' => $price,
+            'idtoy' =>  strtoupper($idtoy),
+            'name' => strtoupper($name),
+            'description' => strtoupper($description),
+            'price' => strtoupper($price),
             'image' => $img
         ]);
 
         if($toyCreate){
             $result = 1;
+            $toyCreate= strtoupper($toyCreate);
         }
         else{
             $result = 0;
