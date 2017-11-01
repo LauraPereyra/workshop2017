@@ -190,6 +190,7 @@
 <script src="{{asset('assets/js/alpha.min.js')}}"></script>
 <script src="{{asset('assets/js/pages/form_elements.js')}}"></script>
 
+
 @yield('js')
 </body>
 </html>
