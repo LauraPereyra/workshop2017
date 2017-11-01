@@ -7,7 +7,8 @@
     <link href="{{asset('assets/plugins/products-comparison-table/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/alpha.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('assets/css/custom.css')}}" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.material.min.css">
 @endsection
 
 @section('title','Juguetes')
@@ -65,10 +66,13 @@
     <script src="{{asset('assets/plugins/google-code-prettify/prettify.js')}}"></script>
     <script src="{{asset('assets/plugins/sweetalert/sweetalert.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery.validate.js')}}"></script>
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/dataTables.material.min.js"></script>
     <script>
-        $(document).ready( function () {
-            $('#datatable').DataTable();
-        });
+        $(document).ready(function() {
+            $('#datatable').DataTable({
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+            });
+        } );
     </script>
 @endsection
