@@ -23,6 +23,7 @@ http://www.templatemo.com/tm-413-flip-turn
             <li class="btn active">Inicio</li>
             <li class="btn"><a href="about.html">Sobre nosotros</a></li>
             <li class="btn"><a href="contact.html">Contacto</a></li>
+            <li class="btn"><a href="{{ route('auth.login') }}">Ingresar</a></li>
         </ul>
     </nav>
     <div class="content-container">
