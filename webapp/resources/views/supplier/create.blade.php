@@ -18,7 +18,7 @@
 
         <div class="form-group col s12">
             {!! Form::label('name_supplier', 'Nombre') !!}
-            {!! Form::text('name_supplier', null, ['class' => 'form-control', 'placeholder' => 'Nombre del proveedor', 'autocomplete' => 'off']) !!}
+            {!! Form::text('name_supplier', null, ['class' => 'form-control', 'placeholder' => 'Nombre del proveedor']) !!}
         </div>
 
         <div class="form-group col s6">
@@ -32,12 +32,12 @@
 
         <div class="form-group col m6">
             {!! Form::label('phone','Telefono') !!}
-            {!! Form::number('phone',null, ['class' => 'form-control', 'placeholder' => '2222222', 'autocomplete' => 'off']) !!}
+            {!! Form::number('phone',null, ['class' => 'form-control', 'placeholder' => '2222222']) !!}
         </div>
 
         <div class="form-group col s12">
             {!! Form::label('address_supplier', 'Dirección') !!}
-            {!! Form::text('address_supplier', null, ['class' => 'form-control', 'placeholder' => 'Av. avenida # 1234 calle Calle1', 'autocomplete' => 'off']) !!}
+            {!! Form::text('address_supplier', null, ['class' => 'form-control', 'placeholder' => 'Av. avenida # 1234 calle Calle1']) !!}
         </div>
 
         <br>

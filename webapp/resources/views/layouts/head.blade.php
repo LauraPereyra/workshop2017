@@ -95,19 +95,20 @@
                 </div>
                 <div class="sidebar-profile-info">
                     <a href="javascript:void(0);" class="account-settings-link">
-                        <p>
-                         {{ Auth::user()->names." ".Auth::user()->lastname1 }}
-                        </p>
-                        <span>{{Auth::user()->email}}<i class="material-icons right">arrow_drop_down</i></span>
+                        <p>David Doe</p>
+                        <span>david@gmail.com<i class="material-icons right">arrow_drop_down</i></span>
                     </a>
                 </div>
             </div>
 
             <div class="sidebar-account-settings">
                 <ul>
+                    <li class="no-padding">
+                        <a class="waves-effect waves-grey"><i class="material-icons">mail_outline</i>Inbox</a>
+                    </li>
                     <li class="divider"></li>
                     <li class="no-padding">
-                        <a href="{{ route('auth.logout') }}" class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Sign Out</a>
+                        <a class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Sign Out</a>
                     </li>
                 </ul>
             </div>
@@ -139,8 +140,11 @@
                     <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">supervisor_account</i>Usuarios<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a href="{{ route('user.index') }}">Listar</a></li>
-                            <li><a href="{{ route('user.create') }}">Registrar</a></li>
+                            <li><a href="miscellaneous-sweetalert.html">Sweet Alert</a>
+                            <li><a href="miscellaneous-code-editor.html">Code Editor</a>
+                            <li><a href="miscellaneous-nestable.html">Nestable List</a>
+                            <li><a href="miscellaneous-masonry.html">Masonry</a>
+                            <li><a href="miscellaneous-idle-timer.html">Idle Timer</a>
                         </ul>
                     </div>
                 </li>

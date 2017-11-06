@@ -13,7 +13,7 @@
                 '2' => 'Proveedor 2',
                 '3' => 'Proveedor 3',
                 '4' => 'Proveedor 4'
-                ], null, ['class' => 'form-control', 'placeholder' => 'Selecciona un proveedor', 'autocomplete' => 'off', 'required']) !!}
+                ], null, ['class' => 'form-control', 'placeholder' => 'Selecciona un proveedor', 'required']) !!}
             </div>
 
             <div class="form-group col s12 m6 l3">
