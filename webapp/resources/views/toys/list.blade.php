@@ -28,6 +28,7 @@
                                     <th>Nombre</th>
                                     <th>Descripcion</th>
                                     <th>Precio</th>
+                                    <th>Imagen</th>
                                     <th>Opciones</th>
                                 </tr>
                                 </thead>
@@ -38,6 +39,7 @@
                                     <td>{{$toy->name}}</td>
                                     <td>{{$toy->description}}</td>
                                     <td>{{$toy->price}}</td>
+                                    <td><img src="/images/avatars/{{$toy->image}}" style="width:30px;height: 44px; border-radius: 50%"> </td>
                                     <td>
                                         <center>
                                         <a href="{{url('/toy/').'/'.$toy->id}}" class="btn-floating waves-effect waves-light "><i class="material-icons">edit</i></a>

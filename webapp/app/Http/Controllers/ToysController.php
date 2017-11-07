@@ -50,7 +50,7 @@ class ToysController extends Controller
         $name           = $request->input('name');
         $description    = $request->input('description');
         $price          = $request->input('price');
-        $img            = '';
+        $img            = $request->input('image')->default('nofoto.jpg');
 
         $toyCreate = DB::table('toys')->insert([
             'idtoy' =>  strtoupper($idtoy),
@@ -105,6 +105,13 @@ class ToysController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function photo($id)
+    {
+        $toy = Toys::find($id);
+        return view('toys.photo',compact('toy'));
+    }
+
     public function update(Request $request)
     {
         $toy = DB::table('toys')
@@ -114,7 +121,7 @@ class ToysController extends Controller
                 'name'=> $request->input('name'),
                 'price'=> $request->input('price'),
                 'description'=> $request->input('description'),
-                'image'=> ''
+                'image'=> '123.jpg'
             ]);
         $toys = Toys::All();
         return view('toys.list',compact('toys'));
