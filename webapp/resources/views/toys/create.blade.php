@@ -29,7 +29,7 @@
 
     <div class="col s12 m12 l12" id="toy-div">
         <br><br>
-        <form  class="col s12" method="post" enctype="multipart/form-data" id="createToy" action="{{ url('/toy/store') }}" >
+        <form  class="col s12" method="post" enctype="multipart/form-data" id="createToy" >
             {{ csrf_field() }}
         <div class="card">
             <div class="card-content">
@@ -64,9 +64,9 @@
 
                 <div class="row">
                     <center>
-                    <button class="waves-effect waves-light btn green m-b-xs btn-message" id="savetoy">Aceptar</button>
+                    <button class="waves-effect waves-light btn green m-b-xs btn-message"  id="savetoy">Aceptar</button>
                     &nbsp&nbsp;
-                    <button class="waves-effect waves-light btn red m-b-xs">Cancelar</button>
+                    <a href="{{url('toy/list')}}" class="waves-effect waves-light btn red m-b-xs">Cancelar</a>
                     </center>
                  </div>
             </div>
@@ -119,14 +119,38 @@
                     price:{required:"Ingrese precio del juguete"}
                 },
                 submitHandler: function(form) {
-                    form.submit();
+                    //form.submit();
+
+                    $.ajax({
+                        url:  '{{url('/toy/store')}}',
+                        type: 'POST',
+                        data: $('#createToy').serialize(),
+                        success: function (obj) {
+                            var result = obj.result;
+                            var query = obj.query;
+                            if(result == 1)
+                            {
+                                swal("Exelente!", "Juguete Registrado", "success");
+                                document.getElementById('createToy').reset();
+                                //obj.preventDefault();
+                            }
+                            else {
+                                swal({   title: "Auto close alert!",
+                                    text: "Me cerrare en 2 segundos.",
+                                    timer: 2000,
+                                    showConfirmButton: false
+                                });
+                            }
+                        }
+                    });
+
                 }
             });
 
         });
 
-        $('#savetoy').click(function(){
-
+        //$('#savetoy').on('submit', function(){
+        /*$('#createToy').submit( function () {
             $.ajax({
                 url:  '{{url('/toy/store')}}',
                 type: 'POST',
@@ -138,6 +162,7 @@
                     {
                         swal("Exelente!", "Juguete Registrado", "success");
                         document.getElementById('createToy').reset();
+                        //obj.preventDefault();
                     }
                     else {
                         swal({   title: "Auto close alert!",
@@ -148,7 +173,7 @@
                     }
                 }
             });
-        });
+        });*/
 
     </script>
 @endsection
