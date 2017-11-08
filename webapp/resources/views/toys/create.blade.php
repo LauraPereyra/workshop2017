@@ -58,20 +58,15 @@
                         <label for="icon_prefix">Descripción</label>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input type="file" id="image" name="image">
-                    </div>
-                </div>
 
 
                 <br>
 
                 <div class="row">
                     <center>
-                    <a class="waves-effect waves-light btn green m-b-xs btn-message" id="savetoy">Aceptar</a>
+                    <button class="waves-effect waves-light btn green m-b-xs btn-message" id="savetoy">Aceptar</button>
                     &nbsp&nbsp;
-                    <a class="waves-effect waves-light btn red m-b-xs">Cancelar</a>
+                    <button class="waves-effect waves-light btn red m-b-xs">Cancelar</button>
                     </center>
                  </div>
             </div>
@@ -146,7 +141,7 @@
                     }
                     else {
                         swal({   title: "Auto close alert!",
-                            text: "I will close in 2 seconds.",
+                            text: "Me cerrare en 2 segundos.",
                             timer: 2000,
                             showConfirmButton: false
                         });

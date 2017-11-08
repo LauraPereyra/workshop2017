@@ -18,7 +18,7 @@ class CreateToysTable extends Migration
             $table->string('idtoy');
             $table->string('name');
             $table->string('description');
-            $table->string('image');
+            $table->string('image')->default('notfoto.jpg');
             $table->decimal('price',10,2);
             $table->timestamps();
         });

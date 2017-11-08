@@ -27,7 +27,7 @@
         </ul>
     @endif
 
-    <div class="col s12 m12 l12">
+    <div class="col s12 m12 l12" id="toy-div">
         <br><br>
 
         <form class="col s12" method="post" id="createToy" action="{{ url('/toy/update') }}">
@@ -64,9 +64,9 @@
 
                     <div class="row">
                         <center>
-                            <button class="waves-effect waves-light btn green m-b-xs btn-message"  type="submit">Aceptar</button>
+                            <button class="waves-effect waves-light btn green m-b-xs btn-message"  type="submit" id="updatetoy">Aceptar</button>
                             &nbsp&nbsp;
-                            <a class="waves-effect waves-light btn red m-b-xs">Cancelar</a>
+                            <button id='cancelar'  name='cancelar' class="waves-effect waves-light btn red m-b-xs">Cancelar</button>
                         </center>
                     </div>
                 </div>
@@ -85,4 +85,57 @@
     <script src="{{asset('assets/plugins/google-code-prettify/prettify.js')}}"></script>
     <script src="{{asset('assets/plugins/sweetalert/sweetalert.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery.validate.js')}}"></script>
+
+
+        <script type="text/javascript">
+
+            $(function () {
+
+                $('#toy-div form').validate({
+                    rules: {
+                        // simple rule, converted to {required:true}
+                        idtoy:{
+                            required:true
+                            //minlenght:5
+                        },
+                        name: {
+                            required: true
+                            //minlength: 5
+                        },
+                        description:{
+                            required:true
+                            //minlength: 7
+                        },
+                        price:{
+                            required:true
+                            //minlenght: 4
+                        }
+                        // compound rule
+                    },
+                    messages: {
+                        idtoy: {required:"Ingrese código del juguete"},
+                        name: {required: "Ingrese nombre del juguete"},
+                        description: {required:"Ingrese descripción del juguete"},
+                        price:{required:"Ingrese precio del juguete"}
+                    },
+                    submitHandler: function(form) {
+                        form.submit();
+                    }
+                });
+
+            });
+
+        $('#updatetoy').click(function(){
+
+            $.ajax({
+                success: function (obj) {
+
+                        swal("Exelente!", "Juguete Actualizado", "success");
+                        document.getElementById('createToy').reset();
+                }
+            });
+        });
+
+    </script>
+
 @endsection

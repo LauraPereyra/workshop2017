@@ -32,6 +32,12 @@ Route::get('/toy/{id}','ToysController@show');
 Route::post('/toy/update','ToysController@update');
 Route::get('toydelete/{id}','ToysController@destroy');
 
+/* --------- upload image  ---------- */
+route::get('photo/{id}','ToysController@photo');
+Route::post('photoproduct','ToysController@update_photo');
+/* --------- upload image  ---------- */
+
+
 /*Supplier Order routes*/
 
 Route::get('/supplierorder', [

@@ -8,6 +8,9 @@ use App\Table;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\ToyRequest;
 use Illuminate\Support\Facades\Storage;
+use Image;
+use File;
+
 
 
 class ToysController extends Controller
@@ -50,7 +53,9 @@ class ToysController extends Controller
         $name           = $request->input('name');
         $description    = $request->input('description');
         $price          = $request->input('price');
-        $img            = $request->input('image')->default('nofoto.jpg');
+       $img            = ('notfoto.jpg');
+
+        //$img = Input::file('images');
 
         $toyCreate = DB::table('toys')->insert([
             'idtoy' =>  strtoupper($idtoy),
@@ -121,7 +126,7 @@ class ToysController extends Controller
                 'name'=> $request->input('name'),
                 'price'=> $request->input('price'),
                 'description'=> $request->input('description'),
-                'image'=> '123.jpg'
+                'image'=> 'notfoto.jpg'
             ]);
         $toys = Toys::All();
         return view('toys.list',compact('toys'));
