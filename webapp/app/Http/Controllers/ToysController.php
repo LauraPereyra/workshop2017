@@ -117,6 +117,18 @@ class ToysController extends Controller
         return view('toys.photo',compact('toy'));
     }
 
+    public function update_photo(Request $request)
+    {
+        $photo = $request->file('photo');
+        $filename = time() . '.' . $photo->getClientOriginalExtension();
+        Image::make($photo)->resize(250, 250)->save(public_path('images/avatars/' . $filename ) );
+        $toy= Toys::find($request->get('id'));
+        $toy->image = $filename;
+        $toy->save();
+        return view('toys.photo')->with('toy',$toy);
+    }
+
+
     public function update(Request $request)
     {
         $toy = DB::table('toys')

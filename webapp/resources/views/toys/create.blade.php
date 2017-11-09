@@ -149,32 +149,6 @@
 
         });
 
-        //$('#savetoy').on('submit', function(){
-        /*$('#createToy').submit( function () {
-            $.ajax({
-                url:  '{{url('/toy/store')}}',
-                type: 'POST',
-                data: $('#createToy').serialize(),
-                success: function (obj) {
-                    var result = obj.result;
-                    var query = obj.query;
-                    if(result == 1)
-                    {
-                        swal("Exelente!", "Juguete Registrado", "success");
-                        document.getElementById('createToy').reset();
-                        //obj.preventDefault();
-                    }
-                    else {
-                        swal({   title: "Auto close alert!",
-                            text: "Me cerrare en 2 segundos.",
-                            timer: 2000,
-                            showConfirmButton: false
-                        });
-                    }
-                }
-            });
-        });*/
-
     </script>
 @endsection
 
