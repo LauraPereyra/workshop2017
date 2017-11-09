@@ -94,12 +94,14 @@
                     <img src="{{asset('assets/images/profile-image.png')}}" class="circle" alt="">
                 </div>
                 <div class="sidebar-profile-info">
-                    <a href="javascript:void(0);" class="account-settings-link">
-                        <p>
-                         {{ Auth::user()->names." ".Auth::user()->lastname1 }}
-                        </p>
-                        <span>{{Auth::user()->email}}<i class="material-icons right">arrow_drop_down</i></span>
-                    </a>
+                    @if(Auth::user())
+                        <a href="javascript:void(0);" class="account-settings-link">
+                            <p>
+                             {{ Auth::user()->names." ".Auth::user()->lastname1 }}
+                            </p>
+                            <span>{{Auth::user()->email}}<i class="material-icons right">arrow_drop_down</i></span>
+                        </a>
+                    @endif
                 </div>
             </div>
 

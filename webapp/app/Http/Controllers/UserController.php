@@ -96,7 +96,9 @@ class UserController extends Controller
         $user -> sex = $request -> sex;
         $user -> birthday = $request -> birthday;
         $user -> email = $request -> email;
-        $user -> password = bcrypt($request -> password);
+        if (isset($request -> password)){
+            $user -> password = bcrypt($request -> password);
+        }
         $user -> role = $request -> role;
         $user ->save();
         return redirect()->route('user.index');

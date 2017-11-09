@@ -18,6 +18,11 @@ class CreateSuppliersTable extends Migration
             $table->string('name_supplier');
             $table->string('country');
             $table->string('phone');
+            $table->string('phone2');
+            $table->string('cellphone');
+            $table->string('cellphone2');
+            $table->string('email');
+            $table->string('website');
             $table->string('address_supplier');
             $table->timestamps();
         });

@@ -26,9 +26,12 @@
                 {!! Form::date('order_limit_date')  !!}
             </div>
 
+
             <div class="form-group col col s12">
                 {!! Form::label('employee', 'Encargado') !!}
-                {!! Form::select('employee', ['Encargado1' => 'Carlos Martinez', 'Encargado2' => 'Joel Rojas'], null, ['class' => 'form-control', 'placeholder' => 'Seleccionar encargado', 'required']) !!}
+                @if(Auth::user())
+                    {!! Form::text('employee',Auth::user()->names." ".Auth::user()->lastname1." ".Auth::user()->lastname2,['class' => 'form-control', 'disabled' => '']) !!}
+                @endif
             </div>
 
             <div class="form-group col col s12">

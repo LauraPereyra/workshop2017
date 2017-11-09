@@ -30,24 +30,25 @@ http://www.templatemo.com/tm-413-flip-turn
         <header>
             <h1 class="center-text">Login</h1>
         </header>
+        <div class="content-container" align="left">
+                {{ Form::open(['route'=>'auth.login', 'method' => 'POST']) }}
 
-        {{ Form::open(['route'=>'auth.login', 'method' => 'POST']) }}
+                    <div class="input-group margin-bottom-sm">
+                        {!! Html::decode(Form::label('email','<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw-5x"></i></span>')) !!}
+                        {{Form::email('email', null,['class'=>'form-control', 'placeholder' => 'example@gmail.com'])}}
+                    </div>
 
-            <div class="form-group">
-                {{Form::label('email','Correo electrónico')}}
-                {{Form::email('email', null,['class'=>'form-control', 'placeholder' => 'example@gmail.com'])}}
-            </div>
+                    <div class="input-group">
+                        {!! Html::decode(Form::label('password','<span class="input-group-addon"><i class="fa fa-key fa-fw-5x"></i></span>')) !!}
+                        {{Form::password('password',['class'=>'form-control', 'placeholder' => '**********'])}}
+                    </div>
 
-            <div class="form-group">
-                {{Form::label('password','Password')}}
-                {{Form::password('password',['class'=>'form-control', 'placeholder' => '**********'])}}
-            </div>
+                    <div class="input-group">
+                        {{ Form::submit('Ingresar',['class' => 'btn btn-primary']) }}
+                    </div>
 
-            <div class="form-group">
-                {{ Form::submit('Ingresar',['class' => 'btn btn-info']) }}
-            </div>
-
-        {{ Form::close() }}
+                {{ Form::close() }}
+        </div>
 
     </div>	<!-- /.content-container -->
     <footer>

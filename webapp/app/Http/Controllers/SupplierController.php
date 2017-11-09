@@ -38,10 +38,15 @@ class SupplierController extends Controller
     public function store(SupplierRequest $request)
     {
         $supplier = new Suppliers($request->all());
-        $supplier -> name_supplier = $request -> name_supplier;
-        $supplier -> country = $request -> country;
-        $supplier -> phone = $request -> phone;
-        $supplier -> address_supplier = $request -> address_supplier;
+        $supplier -> name_supplier      = $request -> name_supplier;
+        $supplier -> country            = $request -> country;
+        $supplier -> cellphone          = $request -> phone;
+        $supplier -> cellphone2         = $request -> phone2;
+        $supplier -> phone              = $request -> cellphone;
+        $supplier -> phone2             = $request -> cellphone2;
+        $supplier -> email              = $request -> email;
+        $supplier -> website            = $request -> website;
+        $supplier -> address_supplier   = $request -> address_supplier;
         $supplier ->save();
         //dd('Orden creada');
         return redirect()->route('supplier.index');
@@ -80,10 +85,16 @@ class SupplierController extends Controller
     public function update(Request $request, $id)
     {
         $supplier = Suppliers::find($id);
-        $supplier -> name_supplier = $request -> name_supplier;
-        $supplier -> country = $request -> country;
-        $supplier -> phone = $request -> phone;
-        $supplier -> address_supplier = $request -> address_supplier;
+        $supplier = new Suppliers($request->all());
+        $supplier -> name_supplier      = $request -> name_supplier;
+        $supplier -> country            = $request -> country;
+        $supplier -> cellphone          = $request -> phone;
+        $supplier -> cellphone2         = $request -> phone2;
+        $supplier -> phone              = $request -> cellphone;
+        $supplier -> phone2             = $request -> cellphone2;
+        $supplier -> email              = $request -> email;
+        $supplier -> website            = $request -> website;
+        $supplier -> address_supplier   = $request -> address_supplier;
         $supplier -> save();
         return redirect()->route('supplier.index');
     }
