@@ -122,7 +122,6 @@
                         <ul>
                             <li><a href="{{ route('supplier.index') }}">Proveedores</a></li>
                             <li><a href="{{ route('supplierorder.index') }}">Pedidos proveedores</a></li>
-                            <li><a href="todo.html">Todo</a></li>
                         </ul>
                     </div>
                 </li>
@@ -133,7 +132,6 @@
                         <ul>
                             <li><a href="{{ url('/toy/create') }}">Registrar</a></li>
                             <li><a href="{{ url('/toy/list') }}">Lista</a></li>
-                            <li><a href="{{ url('/toy/update') }}">Todo</a></li>
                         </ul>
                     </div>
                 </li>
