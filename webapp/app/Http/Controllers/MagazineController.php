@@ -14,6 +14,7 @@ class MagazineController extends Controller
     public function index()
     {
         return view('magazine.magazine');
+
     }
 
     /**

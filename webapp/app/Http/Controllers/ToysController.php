@@ -53,7 +53,7 @@ class ToysController extends Controller
         $name           = $request->input('name');
         $description    = $request->input('description');
         $price          = $request->input('price');
-       $img            = ('notfoto.jpg');
+        $img            = ('notfoto.jpg');
 
         //$img = Input::file('images');
 

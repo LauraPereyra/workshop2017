@@ -15,7 +15,7 @@ class CreateToysTable extends Migration
     {
         Schema::create('toys', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('idtoy');
+            $table->string('idtoy')->unique();
             $table->string('name');
             $table->string('description');
             $table->string('image')->default('notfoto.jpg');

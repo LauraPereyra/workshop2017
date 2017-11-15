@@ -46,6 +46,7 @@ http://www.templatemo.com/tm-413-flip-turn
                     <div class="input-group">
                         {{ Form::submit('Ingresar',['class' => 'btn btn-primary']) }}
                     </div>
+        {{bcrypt('12345')}}
 
                 {{ Form::close() }}
         </div>
