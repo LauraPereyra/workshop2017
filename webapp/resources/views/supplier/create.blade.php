@@ -18,7 +18,7 @@
 
         <div class="form-group col s6">
             {!! Form::label('name_supplier', 'Nombre') !!}
-            {!! Form::text('name_supplier', null, ['class' => 'form-control', 'placeholder' => 'Nombre del proveedor']) !!}
+            {!! Form::text('name_supplier', null, ['class' => 'form-control', 'placeholder' => 'Nombre del proveedor', 'autocomplete' => 'off']) !!}
         </div>
 
         <div class="form-group col m6">
@@ -30,15 +30,9 @@
              'Bolivia', ['class' => 'form-control', 'placeholder' => 'Selecciona un País']) !!}
         </div>
 
-<<<<<<< Updated upstream
-        <div class="form-group col m6">
-            {!! Form::label('phone','Telefono') !!}
-            {!! Form::number('phone',null, ['class' => 'form-control', 'placeholder' => '2222222']) !!}
-=======
         <div class="form-group col m3">
             {!! Form::label('phone','Telefono(*)') !!}
             {!! Form::number('phone',null, ['class' => 'form-control', 'placeholder' => '2222222', 'autocomplete' => 'off']) !!}
->>>>>>> Stashed changes
         </div>
 
         <div class="form-group col m3">
@@ -58,17 +52,17 @@
 
         <div class="form-group col s12">
             {!! Form::label('address_supplier', 'Dirección') !!}
-            {!! Form::text('address_supplier', null, ['class' => 'form-control', 'placeholder' => 'Av. avenida # 1234 calle Calle1']) !!}
+            {!! Form::text('address_supplier', null, ['class' => 'form-control', 'placeholder' => 'Av. avenida # 1234 calle Calle1', 'autocomplete' => 'off']) !!}
         </div>
 
         <div class="form-group col m6">
             {!! Form::label('email', 'Correo') !!}
-            {{Form::email('email', null,['class'=>'form-control', 'placeholder' => 'example@gmail.com'])}}
+            {{Form::email('email', null,['class'=>'form-control', 'placeholder' => 'example@gmail.com', 'autocomplete' => 'off'])}}
         </div>
 
         <div class="form-group col m6">
             {!! Form::label('website', 'Página web') !!}
-            {{Form::text('website', null,['class'=>'form-control', 'placeholder' => 'www.Mipagina.com'])}}
+            {{Form::text('website', null,['class'=>'form-control', 'placeholder' => 'www.Mipagina.com', 'autocomplete' => 'off'])}}
         </div>
 
 

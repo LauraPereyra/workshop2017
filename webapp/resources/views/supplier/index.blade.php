@@ -1,6 +1,7 @@
 @extends('layouts.head')
 
 @section('content')
+    <h4>Listado de Proveedores</h4>
     <br>
     <a href="{{ route('supplier.create') }}" class="waves-effect waves-light btn">Agregar</a>
 

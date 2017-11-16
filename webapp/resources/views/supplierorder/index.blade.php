@@ -2,6 +2,7 @@
 
 
 @section('content')
+    <h4>Listado de ordenes al proveedor</h4>
     <br>
     <a href="{{ route('supplierorder.create') }}" class="waves-effect waves-light btn">Agregar</a>
 

@@ -13,7 +13,7 @@ class CreateMatrixHouseTable extends Migration
      */
     public function up()
     {
-        Schema::create('matrix_house', function (Blueprint $table) {
+        Schema::create('matrix_houses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name_matrix_house');
             $table->string('address_matrix_house');
@@ -29,6 +29,6 @@ class CreateMatrixHouseTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('matrix_house');
+        Schema::dropIfExists('matrix_houses');
     }
 }

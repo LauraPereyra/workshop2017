@@ -24,10 +24,15 @@ class SupplierRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_supplier' => 'min:3|required',
-            'country' => 'required',
-            'phone' => 'numeric|required',
-            'address_supplier' => 'required'
+            'name_supplier'     => 'min:3|required',
+            'country'           => 'required',
+            'phone'             => 'numeric|required',
+            'phone2'            => 'numeric|required',
+            'cellphone'         => 'numeric|required',
+            'cellphone2'        => 'numeric|required',
+            'address_supplier'  => 'required',
+            'email'             => 'required',
+            'website'           => 'required'
         ];
     }
 
@@ -39,12 +44,20 @@ class SupplierRequest extends FormRequest
     public function messages()
     {
         return [
-            'name_supplier.required' => 'El nombre del proveedor es obligatorio.',
-            'name_supplier.min' => 'El nombre del proveedor debe contener al menos 3 caracteres.',
-            'country.required' => 'El país del proveedor es requerido.',
-            'phone.required' => 'El número del proveedor es obligatorio.',
-            'phone.numeric' => 'El campo de telefono debe ser numerico.',
-            'address_supplier.required' => 'La dirección del proveedor es obligatoria.'
+            'name_supplier.required'    => 'El nombre del proveedor es obligatorio.',
+            'name_supplier.min'         => 'El nombre del proveedor debe contener al menos 3 caracteres.',
+            'country.required'          => 'El país del proveedor es requerido.',
+            'phone.required'            => 'El campo Telefono del proveedor es obligatorio.',
+            'phone.numeric'             => 'El campo Telefono debe ser numerico.',
+            'phone2.numeric'            => 'El campo Telefono2 debe ser numerico.',
+            'phone2.required'           => 'El campo Telefono2 es obligatorio.',
+            'cellphone.numeric'         => 'El campo Celular debe ser numerico.',
+            'cellphone.required'        => 'El campo Celular es obligatorio.',
+            'cellphone2.numeric'        => 'El campo Celular2 debe ser numerico.',
+            'cellphone2.required'       => 'El campo Celular2 es obligatorio.',
+            'address_supplier.required' => 'La dirección del proveedor es obligatoria.',
+            'email.required'            => 'El correo del proveedor es obligatorio.',
+            'website.required'          => 'La pagina web del proveedor es obligatoria.'
         ];
     }
 }

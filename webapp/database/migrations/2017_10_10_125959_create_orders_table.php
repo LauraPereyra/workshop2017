@@ -21,7 +21,7 @@ class CreateOrdersTable extends Migration
             $table->integer('supplier_id')->unsigned();
             $table->foreign('supplier_id')->references('id')->on('suppliers');
             $table->integer('matrix_house_id')->unsigned();
-            $table->foreign('matrix_house_id')->references('id')->on('matrix_house');
+            $table->foreign('matrix_house_id')->references('id')->on('matrix_houses');
             $table->timestamps();
         });
     }

@@ -1,6 +1,8 @@
 @extends('layouts.head')
 
 @section('content')
+
+    <h4>Listado de Usuarios</h4>
     <br>
     <a href="{{ route('user.create') }}" class="waves-effect waves-light btn">Agregar</a>
 

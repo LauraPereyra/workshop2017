@@ -18,17 +18,17 @@
 
         <div class="form-group col s12">
             {!! Form::label('names', 'Nombres') !!}
-            {!! Form::text('names', $user->names, ['class' => 'form-control', 'placeholder' => 'Nombres', 'autocomplete' => 'off']) !!}
+            {!! Form::text('names', strtolower($user->names), ['class' => 'form-control', 'placeholder' => 'Nombres', 'autocomplete' => 'off']) !!}
         </div>
 
         <div class="form-group col s6">
             {!! Form::label('lastname1', 'Apellido paterno') !!}
-            {!! Form::text('lastname1', $user->lastname1, ['class' => 'form-control', 'placeholder' => 'Apellido paterno', 'autocomplete' => 'off']) !!}
+            {!! Form::text('lastname1', strtolower($user->lastname1), ['class' => 'form-control', 'placeholder' => 'Apellido paterno', 'autocomplete' => 'off']) !!}
         </div>
 
         <div class="form-group col s6">
             {!! Form::label('lastname2', 'Apellido materno') !!}
-            {!! Form::text('lastname2', $user->lastname2, ['class' => 'form-control', 'placeholder' => 'Apellido materno', 'autocomplete' => 'off']) !!}
+            {!! Form::text('lastname2', strtolower($user->lastname2), ['class' => 'form-control', 'placeholder' => 'Apellido materno', 'autocomplete' => 'off']) !!}
         </div>
 
         <div class="form-group col m6">

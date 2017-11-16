@@ -99,6 +99,15 @@
                             <p>
                              {{ Auth::user()->names." ".Auth::user()->lastname1 }}
                             </p>
+                            <p>
+                                @if(Auth::user()->role == 'superadmin')
+                                    {{ "Administrador" }}
+                                    @elseif(Auth::user()->role == 'manager')
+                                    {{ "Gerente" }}
+                                        @elseif(Auth::user()->role == 'employee')
+                                    {{ "Empleado" }}
+                                @endif
+                            </p>
                             <span>{{Auth::user()->email}}<i class="material-icons right">arrow_drop_down</i></span>
                         </a>
                     @endif
@@ -115,35 +124,46 @@
             </div>
 
             <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                <li class="no-padding active"><a class="waves-effect waves-grey active" href="catalog"><i class="material-icons">settings_input_svideo</i>Inicio</a></li>
-                <li class="no-padding">
-                    <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">store</i>Proveedores<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li><a href="{{ route('supplier.index') }}">Proveedores</a></li>
-                            <li><a href="{{ route('supplierorder.index') }}">Pedidos proveedores</a></li>
-                        </ul>
-                    </div>
-                </li>
+                @if(Auth::user())
+                    @if(Auth::user()->role == 'employee' || Auth::user()->role == 'manager' || Auth::user()->role == 'superadmin')
+                        <li class="no-padding active"><a class="waves-effect waves-grey active" href="catalog"><i class="material-icons">settings_input_svideo</i>Inicio</a></li>
+                        @if(Auth::user()->role == 'manager' || Auth::user()->role == 'superadmin')
+                            <li class="no-padding active"><a class="waves-effect waves-grey active" href="#"><i class="material-icons">trending_up</i>Dashboard</a></li>
+                            <li class="no-padding active"><a class="waves-effect waves-grey active" href="#"><i class="material-icons">grid_on</i>Almacenes</a></li>
+                        @endif
+                        <li class="no-padding active"><a class="waves-effect waves-grey active" href="#"><i class="material-icons">assessment</i>Ventas</a></li>
+                        @if(Auth::user()->role == 'superadmin')
+                            <li class="no-padding">
+                                <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">store</i>Proveedores<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="{{ route('supplier.index') }}">Proveedores</a></li>
+                                        <li><a href="{{ route('supplierorder.index') }}">Pedidos proveedores</a></li>
+                                    </ul>
+                                </div>
+                            </li>
 
-                <li class="no-padding">
-                    <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">loyalty</i>Juguetes<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li><a href="{{ url('/toy/create') }}">Registrar</a></li>
-                            <li><a href="{{ url('/toy/list') }}">Lista</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="no-padding">
-                    <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">supervisor_account</i>Usuarios<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li><a href="{{ route('user.index') }}">Listar</a></li>
-                            <li><a href="{{ route('user.create') }}">Registrar</a></li>
-                        </ul>
-                    </div>
-                </li>
+                            <li class="no-padding">
+                                <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">loyalty</i>Juguetes<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="{{ url('/toy/create') }}">Registrar</a></li>
+                                        <li><a href="{{ url('/toy/list') }}">Lista</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="no-padding">
+                                <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">supervisor_account</i>Usuarios<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="{{ route('user.index') }}">Listar</a></li>
+                                        <li><a href="{{ route('user.create') }}">Registrar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        @endif
+                    @endif
+                @endif
             </ul>
 
             <div class="footer">

@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function roleType(){
+        if($this->role == 'superadmin'){
+            return 1;
+        }elseif ($this->role == 'manager'){
+            return 2;
+        }elseif ($this->role == 'employee'){
+            return 3;
+        }
+    }
 }

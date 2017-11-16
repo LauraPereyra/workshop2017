@@ -12,14 +12,14 @@
     <meta name="author" content="Steelcoders" />
 
     <!-- Styles -->
-    <link type="text/css" rel="stylesheet" href="assets/plugins/materialize/css/materialize.min.css"/>
+    <link type="text/css" rel="stylesheet" href="{{ asset('assets/plugins/materialize/css/materialize.min.css') }}"/>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="assets/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/material-preloader/css/materialPreloader.min.css') }}" rel="stylesheet">
 
 
     <!-- Theme Styles -->
-    <link href="assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/css/alpha.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" type="text/css"/>
 
 
     <script src="http://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -75,11 +75,11 @@
 
 </div>
 <!-- Javascripts -->
-<script src="assets/plugins/jquery/jquery-2.2.0.min.js"></script>
-<script src="assets/plugins/materialize/js/materialize.min.js"></script>
-<script src="assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
-<script src="assets/plugins/jquery-blockui/jquery.blockui.js"></script>
-<script src="assets/js/alpha.min.js"></script>
+<script src="{{ asset('assets/plugins/jquery/jquery-2.2.0.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/materialize/js/materialize.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/material-preloader/js/materialPreloader.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/jquery-blockui/jquery.blockui.js') }}"></script>
+<script src="{{ asset('assets/js/alpha.min.js') }}"></script>
 
 </body>
 </html>

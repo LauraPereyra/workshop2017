@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
@@ -34,20 +35,20 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         $user = new User($request->all());
-        $user -> names = $request -> names;
-        $user -> lastname1 = $request -> lastname1;
-        $user -> lastname2 = $request -> lastname2;
-        $user -> phone = $request -> phone;
-        $user -> cellphone = $request -> cellphone;
-        $user -> address = $request -> address;
-        $user -> sex = $request -> sex;
-        $user -> birthday = $request -> birthday;
-        $user -> email = $request -> email;
-        $user -> password = bcrypt($request -> password);
-        $user -> role = $request -> role;
+        $user -> names      = strtoupper($request -> names);
+        $user -> lastname1  = strtoupper($request -> lastname1);
+        $user -> lastname2  = strtoupper($request -> lastname2);
+        $user -> phone      = $request -> phone;
+        $user -> cellphone  = $request -> cellphone;
+        $user -> address    = $request -> address;
+        $user -> sex        = $request -> sex;
+        $user -> birthday   = $request -> birthday;
+        $user -> email      = $request -> email;
+        $user -> password   = bcrypt($request -> password);
+        $user -> role       = $request -> role;
         $user ->save();
         //dd('usuario creado');
         //dd($user);
@@ -87,19 +88,19 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-        $user -> names = $request -> names;
-        $user -> lastname1 = $request -> lastname1;
-        $user -> lastname2 = $request -> lastname2;
-        $user -> phone = $request -> phone;
-        $user -> cellphone = $request -> cellphone;
-        $user -> address = $request -> address;
-        $user -> sex = $request -> sex;
-        $user -> birthday = $request -> birthday;
-        $user -> email = $request -> email;
+        $user -> names          = $request -> names;
+        $user -> lastname1      = $request -> lastname1;
+        $user -> lastname2      = $request -> lastname2;
+        $user -> phone          = $request -> phone;
+        $user -> cellphone      = $request -> cellphone;
+        $user -> address        = $request -> address;
+        $user -> sex            = $request -> sex;
+        $user -> birthday       = $request -> birthday;
+        $user -> email          = $request -> email;
         if (isset($request -> password)){
-            $user -> password = bcrypt($request -> password);
+            $user -> password   = bcrypt($request -> password);
         }
-        $user -> role = $request -> role;
+        $user -> role           = $request -> role;
         $user ->save();
         return redirect()->route('user.index');
         //dd('El usuario fue actualizado');

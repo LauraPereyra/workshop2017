@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <h4>Creacion de Proveedor</h4>
+        <h4>Modificacion de Proveedor</h4>
 
         {!! Form::open(['route' => ['supplier.update', $supplier], 'method' =>'PUT' ]) !!}
 
@@ -11,19 +11,13 @@
             {!! Form::text('name_supplier', $supplier->name_supplier, ['class' => 'form-control', 'placeholder' => 'Nombre del proveedor', 'autocomplete' => 'off', 'required']) !!}
         </div>
 
-        <div class="form-group col s6">
+        <div class="form-group col m6">
             {!! Form::label('country', 'País') !!}
             {!! Form::select('country',
             ['Bolivia' => 'Bolivia',
              'Peru' => 'Peru',
              'Chile' => 'Chile'],
              $supplier->country, ['class' => 'form-control', 'placeholder' => 'Selecciona un País', 'required']) !!}
-        </div>
-
-
-        <div class="form-group col m6">
-            {!! Form::label('phone','Telefono') !!}
-            {!! Form::number('phone',$supplier->phone, ['class' => 'form-control', 'placeholder' => '2222222', 'autocomplete' => 'off']) !!}
         </div>
 
         <div class="form-group col m3">
@@ -54,12 +48,12 @@
 
         <div class="form-group col m6">
             {!! Form::label('email', 'Correo') !!}
-            {{Form::email('email', $supplier -> email,['class'=>'form-control', 'placeholder' => 'example@gmail.com'])}}
+            {{Form::email('email', $supplier -> email,['class'=>'form-control', 'placeholder' => 'example@gmail.com', 'autocomplete' => 'off'])}}
         </div>
 
         <div class="form-group col m6">
             {!! Form::label('website', 'Página web') !!}
-            {{Form::text('website', $supplier -> website,['class'=>'form-control', 'placeholder' => 'www.Mipagina.com'])}}
+            {{Form::text('website', $supplier -> website,['class'=>'form-control', 'placeholder' => 'www.Mipagina.com', 'autocomplete' => 'off'])}}
         </div>
 
         <br>
