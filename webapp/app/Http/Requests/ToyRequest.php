@@ -24,7 +24,7 @@ class ToyRequest extends FormRequest
     public function rules()
     {
         return [
-            'idtoy' => 'min:4|max:120|required|unique',
+            'idtoy' => 'min:4|max:120|required',
             'name'  => 'min:5|max:120|required'
         ];
     }
