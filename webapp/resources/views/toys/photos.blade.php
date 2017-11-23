@@ -8,27 +8,35 @@
 
 
 @section('content')
-    <main class="mn-inner inner-active-sidebar hidden-fixed-sidebar">
-        <div class="row">
-            <div class="col s12">
+    <div class="row">
+        <br>
+        <div class="col s12 m12 l12">
+            <div class="card">
+                <div class="card-content">
 
-
-                <div class="col s12 m12 l12" id="toy-div">
-                    <br><br>
+                    <span class="card-title"><font size="5" color="black"><center>Imagenes de Juguete</center></font> </span><br>
 
                     <form action="/upload" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
-                        Product photos (can attach more than one):
-                        <br />
+                        <span><font size="5" color="black" face="Comic Sans M">Nombre: </font></span>
+                        <span><font size="5" color="#ffa726">{{ $toy->name }}</font></span> <Br>
+                        <br>
+                        Imagenes Juguetes (puede poner mas de una):
+                        <br>
+
                         <input type="file" name="photos[]" multiple />
                         <input type="hidden" name="id" id='id' value="{{ $toy->id }}">
                         <br /><br />
                         <input type="submit" value="Upload" />
                     </form>
+                    <br><Br><br>
 
-                </div>
+
+                    <img src="/photos/avatars/{{ $toy->images }}" style="width:100px;height:100px;"><br><br>
+
 
             </div>
         </div>
-    </main>
+        </div>
+    </div>
 @endsection

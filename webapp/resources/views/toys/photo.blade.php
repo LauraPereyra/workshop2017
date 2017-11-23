@@ -47,7 +47,8 @@
                     <div class="w3-container w3-center">
 
                                 <br>
-                                <input type="submit" class="waves-effect waves-light btn orange m-b-xs" value="Aceptar">
+                        <td><a href="{{url('upload',$toy->id)}}" class="waves-effect waves-light btn orange m-b-xs">Agregar mas imagenes</a></td>
+
                                 <Br>
                     </div>
                 </div>

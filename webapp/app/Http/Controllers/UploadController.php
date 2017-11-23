@@ -15,7 +15,21 @@ class UploadController extends Controller
     {
         $toy = Toys::find($id);
         return view('toys.photos',compact('toy'));
+        //$photos=DB::table('photos')
+          //  ->join('toys','toy.id','=','photos.toy_id')
+          //  ->where('photos.toy_id',$id)
+          //->get();
+        //return view('toys.photos',compact(['toy','photos']));
     }
+
+
+    public function uploadShow($id)
+    {
+        $toys = Toys::All();
+        return view('toys.photos',compact('toys'));
+    }
+
+
 
     public function uploadSubmit(Request $request)
     {
