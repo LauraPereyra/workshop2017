@@ -28,7 +28,7 @@
                             {{ csrf_field() }}
                             <div class="card-content">
                                 <label>Actualiza la imagen del juguete</label><br>
-                                <input type="file" name="photo" >
+                                <input type="file" name="photo" multiple >
                                 <input type="hidden" name="id" id='id' value="{{ $toy->id }}">
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <p></p>
@@ -37,6 +37,18 @@
                                 <Br>
                             </div>
                         </form>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <div class="w3-card-4 w3-dark-grey">
+                    <br>
+                    <div class="w3-container w3-center">
+
+                                <br>
+                                <input type="submit" class="waves-effect waves-light btn orange m-b-xs" value="Aceptar">
+                                <Br>
                     </div>
                 </div>
                 <!-- End Left Column -->

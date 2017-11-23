@@ -126,6 +126,8 @@ class ToysController extends Controller
         $toy->image = $filename;
         $toy->save();
         return view('toys.photo')->with('toy',$toy);
+
+
     }
 
 

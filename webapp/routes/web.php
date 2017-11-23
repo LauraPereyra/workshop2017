@@ -25,6 +25,9 @@ Route::get('/', 'MagazineController@index');
 /* --------- upload image  ---------- */
 route::get('photo/{id}','ToysController@photo');
 Route::post('photoproduct','ToysController@update_photo');
+
+Route::get('/upload/{id}', 'UploadController@uploadForm');
+Route::post('/upload', 'UploadController@uploadSubmit');
 /* --------- upload image  ---------- */
 
 
