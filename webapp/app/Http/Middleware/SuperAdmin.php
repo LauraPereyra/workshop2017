@@ -22,7 +22,7 @@ class SuperAdmin
      */
     public function handle($request, Closure $next)
     {
-        if ($this->auth->user()->roleType() == 1){
+        if ($this->auth->user()->roleType() >= 1){
             return $next($request);
         }else{
             abort(401, "No Autorizado");

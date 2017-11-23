@@ -22,7 +22,7 @@ class Employee
      */
     public function handle($request, Closure $next)
     {
-        if ($this->auth->user()->roleType() == 3){
+        if ($this->auth->user()->roleType() <= 3){
             return $next($request);
         }else{
             abort(401, "No Autorizado");

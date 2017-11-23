@@ -129,9 +129,17 @@
                         <li class="no-padding active"><a class="waves-effect waves-grey active" href="catalog"><i class="material-icons">settings_input_svideo</i>Inicio</a></li>
                         @if(Auth::user()->role == 'manager' || Auth::user()->role == 'superadmin')
                             <li class="no-padding active"><a class="waves-effect waves-grey active" href="#"><i class="material-icons">trending_up</i>Dashboard</a></li>
-                            <li class="no-padding active"><a class="waves-effect waves-grey active" href="#"><i class="material-icons">grid_on</i>Almacenes</a></li>
+                            <li class="no-padding">
+                                <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">grid_on</i>Almacenes<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="{{ route('warehouse.index') }}">Listado de almacenes</a></li>
+                                        <li><a href="{{ route('warehouse.transfer') }}">Traspasos</a></li>
+                                    </ul>
+                                </div>
+                            </li>
                         @endif
-                        <li class="no-padding active"><a class="waves-effect waves-grey active" href="#"><i class="material-icons">assessment</i>Ventas</a></li>
+                        <li class="no-padding active"><a class="waves-effect waves-grey active" href="{{ route('sale.index') }}"><i class="material-icons">assessment</i>Ventas</a></li>
                         @if(Auth::user()->role == 'superadmin')
                             <li class="no-padding">
                                 <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">store</i>Proveedores<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>

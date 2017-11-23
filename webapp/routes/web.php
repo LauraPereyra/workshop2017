@@ -157,6 +157,60 @@ Route::group(['middleware' => 'auth'], function () {
             'uses' => 'SupplierController@update',
             'as'   => 'supplier.update'
         ]);
+
+        /*Warehouse routes*/
+
+        Route::get('/warehouse', [
+            'uses' => 'WarehouseController@index',
+            'as'   => 'warehouse.index'
+
+        ]);
+
+        Route::post('/warehouse/store', [
+            'uses' => 'WarehouseController@store',
+            'as'   => 'warehouse.store'
+        ]);
+
+        Route::get('warehouse/create', [
+            'uses' => 'WarehouseController@create',
+            'as'   => 'warehouse.create'
+        ]);
+
+        Route::get('warehouse/{id}/destroy', [
+            'uses' => 'WarehouseController@destroy',
+            'as'   => 'warehouse.destroy'
+        ]);
+
+        Route::get('warehouse/{id}/edit', [
+            'uses' => 'WarehouseController@edit',
+            'as'   => 'warehouse.edit'
+        ]);
+
+        Route::put('warehouse/{id}', [
+            'uses' => 'WarehouseController@update',
+            'as'   => 'warehouse.update'
+        ]);
+
+        Route::get('warehouse/{id}/showstock', [
+            'uses' => 'WarehouseController@showstock',
+            'as'   => 'warehouse.stock'
+        ]);
+
+        /*Transfer routes*/
+        Route::get('warehouse/transfer', [
+            'uses' => 'WarehouseController@transfer',
+            'as'   => 'warehouse.transfer'
+        ]);
+        Route::post('warehouse/maketransfer', [
+            'uses' => 'WarehouseController@maketransfer',
+            'as'   => 'warehouse.maketransfer'
+        ]);
+        /*Sales routes*/
+
+        Route::get('/sale', [
+            'uses' => 'SaleController@index',
+            'as'   => 'sale.index'
+        ])->middleware('employee');
     });
 
     /*Default routes*/

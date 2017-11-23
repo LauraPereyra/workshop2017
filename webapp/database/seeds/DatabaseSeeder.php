@@ -16,7 +16,11 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             SupplierTableseeder::class,
             Matrix_houseTableSeeder::class,
-            OrdersTableSeeder::class
+            OrdersTableSeeder::class,
+            BranchesTableSeeder::class,
+            ToyTableSeeder::class,
+            WorehouseSeeder::class,
+            WorehouseToySeeder::class
 
         ]);
     }
