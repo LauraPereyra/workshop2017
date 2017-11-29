@@ -27,8 +27,9 @@
             [
              1 => 'Sucursal Obrajes',
              2 => 'Sucursal Miraflores',
+             3 => 'Sucursal Achumani',
              ],
-             null, ['class' => 'form-control', 'placeholder' => 'Selecciona una sucursal']) !!}
+             1, ['class' => 'form-control', 'placeholder' => 'Selecciona una sucursal']) !!}
         </div>
 
 

@@ -26,6 +26,8 @@ class CreateUsersTable extends Migration
             $table->date('birthday');
             $table->string('address');
             $table->enum('sex',['masculino','femenino'])->default('masculino');
+            $table->integer('branch_id')->unsigned();
+            $table->foreign('branch_id')->references('id')->on('branches');
             $table->rememberToken();
             $table->timestamps();
         });

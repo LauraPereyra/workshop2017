@@ -25,5 +25,12 @@ class BranchesTableSeeder extends Seeder
         $branch -> address    = "Av. asdhgjjjh";
         $branch -> telephone  = "5123549";
         $branch ->save();
+
+        $branch = new Branch;
+        $branch -> nit        = "6521548";
+        $branch -> name       = "Sucursal Achumani";
+        $branch -> address    = "Av. achuaslkjasdljkas";
+        $branch -> telephone  = "2223549";
+        $branch ->save();
     }
 }

@@ -58,9 +58,19 @@
             {!! Form::date('birthday', Carbon\Carbon::parse($user->birthday)->format('Y-m-d')) !!}
         </div>
 
-        <div class="form-group col s12">
+        <div class="form-group col s6">
             {!! Form::label('email', 'Correo') !!}
             {!! Form::email('email', $user->email, ['class' => 'form-control', 'placeholder' => 'example@gmail.com', 'autocomplete' => 'off']) !!}
+        </div>
+
+        <div class="form-group col s6">
+            {!! Form::label('branch_id', 'Sucursal') !!}
+            {!! Form::select('branch_id',
+            [
+                1 => 'Sucursal Obrajes',
+                2 => 'Sucursal Miraflores',
+                3 => 'Sucursal Achumani'],
+                $user->branch_id , ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group col s6">

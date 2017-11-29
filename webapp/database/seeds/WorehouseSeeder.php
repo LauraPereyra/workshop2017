@@ -28,5 +28,13 @@ class WorehouseSeeder extends Seeder
         $worehouse -> capacity           = 300;
         $worehouse ->save();
 
+        $worehouse = new Warehouse;
+        $worehouse -> name               = "Almacen Achumani";
+        $worehouse -> matrix_house_id    = null;
+        $worehouse -> branch_id          = 3;
+        $worehouse -> address            = "Av. asdjhjjjfgh";
+        $worehouse -> capacity           = 400;
+        $worehouse ->save();
+
     }
 }

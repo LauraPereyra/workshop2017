@@ -47,6 +47,7 @@ class UserController extends Controller
         $user -> sex        = $request -> sex;
         $user -> birthday   = $request -> birthday;
         $user -> email      = $request -> email;
+        $user -> branch_id  = $request -> branch_id;
         $user -> password   = bcrypt($request -> password);
         $user -> role       = $request -> role;
         $user ->save();
@@ -97,6 +98,7 @@ class UserController extends Controller
         $user -> sex            = $request -> sex;
         $user -> birthday       = $request -> birthday;
         $user -> email          = $request -> email;
+        $user -> branch_id      = $request -> branch_id;
         if (isset($request -> password)){
             $user -> password   = bcrypt($request -> password);
         }
