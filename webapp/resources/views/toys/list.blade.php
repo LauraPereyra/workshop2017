@@ -7,7 +7,9 @@
     <link href="{{asset('assets/plugins/products-comparison-table/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/alpha.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('assets/css/custom.css')}}" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/dataTables.material.min.css')}}">
+    <!--  ********************* QUITE ESTO*************************
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/dataTables.material.min.css')}}">
+    -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/material.min.css')}}">
 @endsection
 
@@ -21,7 +23,7 @@
                 <div class="card">
                     <div class="card-content">
                         <span class="card-title"><font size="5" color="black"><center>Lista de Juguetes</center></font> </span><br>
-                            <table id="datatable" class="table">
+                        <table id="datatable" class="display highlight" cellspacing="0" width="100%">
                                 <thead>
                                 <tr>
                                     <th>Código</th>
@@ -71,11 +73,37 @@
     <script type="text/javascript" charset="utf8" src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>
     <script type="text/javascript" charset="utf8" src="{{asset('assets/js/dataTables.material.min.js')}}"></script>
     <script>
+
         $(document).ready(function() {
             $('#datatable').DataTable({
-
-
+                "language": {
+                    "sProcessing":     "Procesando...",
+                    "sLengthMenu":     "Mostrar _MENU_ registros",
+                    "sZeroRecords":    "No se encontraron resultados",
+                    "sEmptyTable":     "Ningún dato disponible en esta tabla",
+                    "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix":    "",
+                    "sSearch":         "Buscar:",
+                    "sUrl":            "",
+                    "sInfoThousands":  ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst":    "Primero",
+                        "sLast":     "Último",
+                        "sNext":     "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
             });
+            $("select").val('10');
+            $('select').addClass("browser-default");
+            $('select').material_select();
         } );
     </script>
 @endsection
