@@ -216,6 +216,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/search/customer','SaleController@autocompleteCustomer')->name('search.customer.nit');
         Route::get('/search/toys','SaleController@autocompleteToys')->name('search.toys');
         Route::post('/sale/store', 'SaleController@store')->name('sale.store')->middleware('employee');
+        Route::get('/sale/{idSale}', 'SaleController@show');
     });
 
     /*Default routes*/

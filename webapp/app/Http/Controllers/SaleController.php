@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
+use App\Sale;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class SaleController extends Controller
@@ -36,23 +39,21 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        if(!count($request->input('id_toy'))){
+        /*if(!count($request->input('id_toy_hidden'))){
             $state  = 0;
             return response()->json([
                 'state' => $state,
                 'errorCode' => 1,
-                'message' => 'Complete el formulario, Ingrese la mesa a reservar',
+                'message' => 'Complete el formulario, Ingrese los productos a comprar',
             ]);
-        }
-        $idCustomer         = $request->input('id_customer');
-
+        }*/
+        $idCustomer = $request->input('id_customer');
         // FLAGS
         $helper = $request->input('helper');
         $state  = 1 ;
         DB::beginTransaction();
         try{
             if ($helper != 1){
-                $clientType = 'nuevo';
                 DB::table('customers')->insert([
                     'nit'        => $request->input('nit'),
                     'name'      => $request->input('name'),
@@ -62,13 +63,12 @@ class SaleController extends Controller
                     'email'       => $request->input('email'),
                     'address'   => $request->input('address')
                 ]);
-
                 $idCustomer = Customer::all()->last()->id;
             }
             $user = Auth::user();
             DB::table('sales')->insert([
                 'user_id'            => Auth::id(),
-                'date_sale'          => date('YYYY-mm-dd'),
+                'date_sale'          => date('Y-m-d'),
                 'status'             => 'Facturado',
                 'branch_id'          => $user->branch_id,
                 'customer_id'          => $idCustomer
@@ -84,7 +84,7 @@ class SaleController extends Controller
             for($i=0; $i<count($id_toy); $i++){
                 $list = [
                     'sale_id'           => $idSale,
-                    'toy_id'            => $id_toy,
+                    'toy_id'            => $id_toy[$i],
                     'quantity'          => $quantity[$i],
                     'price_unit'        => $price_sell[$i],
                     'price_total'       => $price_total[$i],
@@ -93,10 +93,10 @@ class SaleController extends Controller
             }
             DB::table('sales_details')->insert($data);
             DB::commit();
-            $showReservation = '/sale/'.$idSale;
+            $showFacturation = '/sale/'.$idSale;
             return response()->json([
                 'state' => $state,
-                'show' => $showReservation,
+                'show' => $showFacturation,
             ]);
         }catch (\Exception $e){
             DB::rollback();
@@ -118,15 +118,16 @@ class SaleController extends Controller
         }
     }
 
+
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show($id)
     {
-        dd(' joelo');
+        dd($id);
     }
 
     /**
