@@ -17,7 +17,7 @@
     <link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/font-awesome.min.css?1422529194" />
     <link type="text/css" rel="stylesheet" href="../../assets/css/theme-default/material-design-iconic-font.min.css?1421434286" />
     <!-- END STYLESHEETS -->
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script type="text/javascript" src="../../assets/js/libs/utils/html5shiv.js?1403934957"></script>

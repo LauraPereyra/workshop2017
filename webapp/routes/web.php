@@ -211,6 +211,11 @@ Route::group(['middleware' => 'auth'], function () {
             'uses' => 'SaleController@index',
             'as'   => 'sale.index'
         ])->middleware('employee');
+
+        //ROUTES SALES
+        Route::get('/search/customer','SaleController@autocompleteCustomer')->name('search.customer.nit');
+        Route::get('/search/toys','SaleController@autocompleteToys')->name('search.toys');
+        Route::post('/sale/store', 'SaleController@store')->name('sale.store')->middleware('employee');
     });
 
     /*Default routes*/
@@ -218,5 +223,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/catalog', 'CatalogController@index');
 
     Route::get('/catalog/dataTable', 'CatalogController@indexDataTable');
+
+
 
 });
