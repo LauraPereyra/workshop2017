@@ -57,8 +57,7 @@
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">today</i>
-                                <input placeholder="" type="text" class="validate" name="birthday" id="birthday">
-                                <label for="icon_prefix2">Fecha de nacimiento</label>
+                                <input placeholder="" type="date" class="validate" name="birthday" id="birthday">
                             </div>
                         </div>
                     </div>

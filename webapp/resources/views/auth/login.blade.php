@@ -28,11 +28,10 @@
 
 </head>
 <body class="signin-page">
-<br><Br><Br><br><br><Br><Br><br><br><Br><Br><br>
+<br><Br><Br><br><br><Br><Br>
 <div class="main-container">
 
     <div class="content-container">
-
         <div class="mn-content valign-wrapper">
             <main class="mn-inner container">
                 <div class="valign">
@@ -40,13 +39,17 @@
                         <div class="col s12 m6 l4 offset-l4 offset-m3">
                             <div class="card white darken-1">
                                 <div class="card-content ">
-                                    <span class="card-title">Iniciar Sesión</span>
+                                    <font size="6" color="black">
+                                    <center><span class="card-title">Iniciar Sesión</span></center><br>
+                                    </font>
+                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/><br><br>
+                                    {{asset('assets/pagina/images/1-small.jpg')}}
                                     <div class="row">
                                         {{ Form::open(['route'=>'auth.login', 'method' => 'POST']) }}
 
                                         <div class="input-group margin-bottom-sm">
                                             {!! Html::decode(Form::label('email','<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw-5x"></i></span>')) !!}
-                                            {{Form::email('email', null,['class'=>'form-control', 'placeholder' => 'example@gmail.com'])}}
+                                            {{Form::email('email', null,['class'=>'form-control', 'placeholder' => 'Ingrese email', 'color' => 'black'])}}
                                         </div>
 
                                         <div class="input-group">

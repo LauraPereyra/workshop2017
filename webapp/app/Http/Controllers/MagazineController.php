@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Toys;
+
 
 class MagazineController extends Controller
 {
@@ -46,7 +49,11 @@ class MagazineController extends Controller
      */
     public function show($id)
     {
-        //
+        $toy = DB::table('toys')
+            ->where('id',$id);
+        return view('magazine.magazine',compact(['toy'=>$toy]));
+
+
     }
 
     /**
