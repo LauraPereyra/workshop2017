@@ -121,12 +121,13 @@ class SaleController extends Controller
             ->join('customers','customers.id','=','sales.customer_id')
            ->join('sales_details', 'sales_details.sale_id', '=', 'sales.id')
            ->join('users', 'users.id', '=', 'sales.user_id')
+           ->join('toys', 'toys.id', '=', 'sales_details.toy_id')
             ->where('sales.id',$idSale)
             //->select('sales.id','sales.date_sale','customers.nit')
             ->first();
-            //dd($sales);
+            dd($sales);
 
-        return view('sale.detail', compact('sales'));
+        //return view('sale.detail', compact('sales'));
 
 
 

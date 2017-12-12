@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSalesDetailTable extends Migration
+class CreateSalesDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,6 +19,9 @@ class CreateSalesDetailTable extends Migration
             $table->integer('toy_id')->unsigned();
             $table->foreign('toy_id')->references('id')->on('toys');
             $table->integer('quantity');
+            $table->string('price_unit');
+            $table->string('price_total');
+
         });
     }
 

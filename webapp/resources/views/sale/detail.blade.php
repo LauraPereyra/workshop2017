@@ -30,21 +30,15 @@
 
             </div>
         </div>
-        <div class="col s9"><div class="card white"><div class="card-content center">{{$sales->date_sale}}</div></div></div>
+        <div class="col s9">
+            <div class="card white">
+                <div class="card orange lighten-1"><font size="4" color="black"><center>Detalle de venta</center></font></div>
+                <p align="center"><img src="{{asset('assets/images/shop.png')}}" style="height:106px;width:106px"></p>
+                <div class="card-content center">{{$sales->date_sale}}
+                </div>
+            </div>
+        </div>
 
-    </div>
-
-    <div class="row">
-
-        <div class="col s12"><div class="card white"><div class="card-content center">{{$sales->id}}</div></div></div>
-        <div class="col s6"><div class="card white"><div class="card-content center">{{$sales->user_id}}</div></div></div>
-        <div class="col s6"><div class="card white"><div class="card-content center">{{$sales->date_sale}}</div></div></div>
-    </div>
-    <div class="row">
-
-        <div class="col s12"><div class="card white"><div class="card-content center">{{$sales->status}}</div></div></div>
-        <div class="col s6"><div class="card white"><div class="card-content center">{{$sales->phone}}</div></div></div>
-        <div class="col s6"><div class="card white"><div class="card-content center">{{$sales->address}}</div></div></div>
     </div>
 
 @endsection

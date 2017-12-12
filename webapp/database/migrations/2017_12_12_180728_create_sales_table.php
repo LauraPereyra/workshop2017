@@ -21,7 +21,8 @@ class CreateSalesTable extends Migration
             $table->string('status');
             $table->integer('branch_id')->unsigned();
             $table->foreign('branch_id')->references('id')->on('branches');
-            $table->string('client_id');
+            $table->integer('customer_id')->unsigned();
+            $table->foreign('customer_id')->references('id')->on('customers');
         });
     }
 

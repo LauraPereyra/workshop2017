@@ -28,13 +28,5 @@ class ToyTableSeeder extends Seeder
         $toy -> price = 30;
         $toy ->save();
 
-        $toy = new Toys;
-        $toy -> id = 369;
-        $toy -> idtoy = 369;
-        $toy -> name = "Carrito bombero";
-        $toy -> description = "asdasdasd";
-        $toy -> image = "notfoto.jpg";
-        $toy -> price = 20;
-        $toy ->save();
     }
 }
