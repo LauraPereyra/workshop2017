@@ -1,4 +1,4 @@
-@extends('layouts.head)
+@extends('layouts.head')
 @section('css')
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <link href="{{asset('assets/plugins/material-preloader/css/materialPreloader.min.css')}}" rel="stylesheet">
@@ -11,24 +11,33 @@
 @endsection
 
 @section('content')
-    {{dd($sales)}}
+
     <div class="row">
 
-        <div class="col s12"><div class="card white"><div class="card-content center">{{$sales->nit}}</div></div></div>
-        <div class="col s6"><div class="card white"><div class="card-content center">{{$sales->name}}</div></div></div>
-        <div class="col s6"><div class="card white"><div class="card-content center">{{$sales->lastname}}</div></div></div>
+        <div class="col s12"><div class="card orange accent-3"><div class="card-content center"><font size="5" color="black"><center>VENTA Sr. {{$sales->lastname}} </center></font> </div></div></div>
+        <div class="col s6">
+            <div class="card white">
+                <div class="card-content center">{{$sales->user_id}}
+                </div>
+            </div>
+        </div>
+        <div class="col s6"><div class="card white"><div class="card-content center">{{$sales->date_sale}}</div></div></div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col s12"><div class="card white"><div class="card-content center">{{$sales->id}}</div></div></div>
+        <div class="col s6"><div class="card white"><div class="card-content center">{{$sales->user_id}}</div></div></div>
+        <div class="col s6"><div class="card white"><div class="card-content center">{{$sales->date_sale}}</div></div></div>
     </div>
     <div class="row">
 
-        <div class="col s12"><div class="card white"><div class="card-content center">{{$sales->email}}</div></div></div>
+        <div class="col s12"><div class="card white"><div class="card-content center">{{$sales->status}}</div></div></div>
         <div class="col s6"><div class="card white"><div class="card-content center">{{$sales->phone}}</div></div></div>
         <div class="col s6"><div class="card white"><div class="card-content center">{{$sales->address}}</div></div></div>
     </div>
-    <div class="row">
 
-        <div class="col s12"><div class="card white"><div class="card-content center">{{$sales->birthday}}</div></div></div>
-
-    </div>
 @endsection
 
 @section('js')

@@ -110,16 +110,21 @@ class SaleController extends Controller
     {
         //dd($id);
         $idSale = $id;
-       /** $sales = DB::table('sales')
-            ->join('customers', 'customer.id', '=', 'sales.customer_id')
+      /** $sales = DB::table('sales')
+            ->join('customers', 'customers.id', '=', 'sales.customer_id')
             ->join('sales_details', 'sales_details.sale_id', '=', 'sales.id')
             ->join('users', 'user.id', '=', 'sales.user_id')
             ->where('sales.id', '=', $idSale)
             ->first();**/
 
-       $sales = DB::table('customers')
-            ->where('id',$idSale)
+       $sales = DB::table('sales')
+            ->join('customers','customers.id','=','sales.customer_id')
+           ->join('sales_details', 'sales_details.sale_id', '=', 'sales.id')
+           ->join('users', 'users.id', '=', 'sales.user_id')
+            ->where('sales.id',$idSale)
+            //->select('sales.id','sales.date_sale','customers.nit')
             ->first();
+            //dd($sales);
 
         return view('sale.detail', compact('sales'));
 
