@@ -4,6 +4,7 @@
 
     <link rel="stylesheet" href="{{asset('assets/css/w3.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/w3-theme-blue-grey.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 @endsection
 
@@ -11,17 +12,15 @@
 @section('content')
 
 
-    <!-- Page Container -->
-    <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
 
-        <!-- The Grid -->
-        <div class="w3-row-padding">
+    <div class="row">
 
-            <!-- Left Column -->
-            <div class="w3-col m5">
-                <!-- Profile -->
-                <div class="w3-card-4 w3-dark-grey">
-                    <br>
+        <div class="col s12"><div class="card blue-grey darken-4"><div class="card-content center"><font size="5" color="white"><center>JUGUETE </center></font> </div></div></div>
+        <div class="col s5">
+
+            <div class="card white">
+                <div class="card orange lighten-1"><font size="4" color="black"><center>Imagen principal</center></font></div>
+                <div class="card-content center">
                     <div class="w3-container w3-center">
                         <img src="/images/avatars/{{ $toy->image }}" style="width:250px;height:250px;"><br><br>
                         <form  class="col s12" method="post" enctype="multipart/form-data" id="createToy" action="/photoproduct" >
@@ -39,53 +38,43 @@
                         </form>
                     </div>
                 </div>
+            </div>
 
-                <br><br>
+            <div class="card white">
 
-                <div class="w3-card-4 w3-dark-grey">
+            </div>
+        </div>
+        <div class="col s7">
+            <div class="card white">
+                <div class="card orange lighten-1"><font size="4" color="black"><center>Datos del juguete</center></font></div>
+                <div class="card-content center">
+                    <center>
+                        <img src="/images/avatars/{{ $toy->image }}" style="width:80px;height:80px;"><br><br>
+                    </center>
+                    <font size="4" color="black"><p align="center"><i class="fa fa-tag fa-fw w3-margin-right w3-text-theme"></i>Código: &nbsp&nbsp;</font>{{$toy->idtoy}}</p><br>
+                    <font size="4" color="black"><p align="center"><i class="fa fa-gamepad fa-fw w3-margin-right w3-text-theme"></i>Nombre: &nbsp&nbsp;</font>{{$toy->name}}</p><br>
+                    <font size="4" color="black"><p align="center"><i class="fa fa-ticket fa-fw w3-margin-right w3-text-theme"></i>Descripción: &nbsp&nbsp;</font>{{$toy->description}}</p><br>
+                    <input type="hidden" name="id" id='id' value="{{ $toy->id }}">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    </div>
+                </div>
+
+            <div class="card white">
+                <div class="card-content center">
                     <br>
-                    <div class="w3-container w3-center">
-
-                                <br>
-                        <td><a href="{{url('upload',$toy->id)}}" class="waves-effect waves-light btn orange m-b-xs">Agregar mas imagenes</a></td>
-
-                                <Br>
-                    </div>
+                    <td><a href="{{url('upload',$toy->id)}}" class="waves-effect waves-light btn  blue-grey darken-4 m-b-xs">Agregar mas imagenes</a></td>
+                    <Br>
                 </div>
-                <!-- End Left Column -->
             </div>
 
-
-            <!-- Middle Column -->
-            <div class="w3-col m7">
-                <div class="w3-card-4 w3-dark-grey">
-                    <div class="w3-container">
-                        <div class="card-content">
-                            <br>
-                            <span class="card-title"><font size="6" color="black" face="Comic Sans M"><center>Información de juguete</center></font></span><br>
-                            <center>
-                                <img src="/images/avatars/{{ $toy->image }}" style="width:80px;height:80px;"><br><br>
-                            </center>
-
-                            &emsp;&emsp;&emsp;<span><font size="5" color="black" face="Comic Sans M">Código:  </font></span>
-                            <span><font size="5" color="#ffa726">{{ $toy->idtoy }}</font></span> <br>
-                            &emsp;&emsp;&emsp;<span><font size="5" color="black" face="Comic Sans M">Nombre: </font></span>
-                            <span><font size="5" color="#ffa726">{{ $toy->name }}</font></span> <Br>
-                            &emsp;&emsp;&emsp;<span><font size="5" color="black" face="Comic Sans M">Descripción: </font></span>
-                            <span><font size="5" color="#ffa726">{{ $toy->description }}</font></span>
-                            <input type="hidden" name="id" id='id' value="{{ $toy->id }}">
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <p></p>
-                            <br><Br>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Middle Column -->
             </div>
-            <!-- End Grid -->
+        </div>
 
-        <!-- End Page Container -->
     </div>
+
+
+
+
 
 
 

@@ -19,10 +19,10 @@
 
         <div class="row">
             <br>
+            <div class="col s12"><div class="card orange accent-3"><div class="card-content center"><font size="5" color="black"><center>Lista de Juguetes</center></font> </div></div></div>
             <div class="col s12 m12 l12">
                 <div class="card">
                     <div class="card-content">
-                        <span class="card-title"><font size="5" color="black"><center>Lista de Juguetes</center></font> </span><br>
                         <table id="datatable" class="display highlight" cellspacing="0" width="100%">
                                 <thead>
                                 <tr>
