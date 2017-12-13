@@ -139,8 +139,8 @@ class ToysController extends Controller
                 'idtoy' => $request->input('idtoy'),
                 'name'=> $request->input('name'),
                 'price'=> $request->input('price'),
-                'description'=> $request->input('description'),
-                'image'=> 'notfoto.jpg'
+                'description'=> $request->input('description')
+                //'image'=> 'notfoto.jpg'
             ]);
         $toys = Toys::All();
         return view('toys.list',compact('toys'));
