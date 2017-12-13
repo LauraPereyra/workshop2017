@@ -125,9 +125,9 @@ class SaleController extends Controller
             ->where('sales.id',$idSale)
             //->select('sales.id','sales.date_sale','customers.nit')
             ->first();
-            dd($sales);
+            //dd($sales);
 
-        //return view('sale.detail', compact('sales'));
+        return view('sale.detail', compact('sales'));
 
 
 

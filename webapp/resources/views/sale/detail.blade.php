@@ -41,6 +41,30 @@
 
     </div>
 
+    <div class="row">
+
+        <div class="col s3">
+
+            <div class="card white">
+                <div class="card orange lighten-1"><font size="4" color="black"><center>Datos del vendedor</center></font></div>
+                <p align="center"><img src="{{asset('assets/images/sales.png')}}" style="height:106px;width:106px"></p>
+                <div class="card-content center">
+                    <font size="2" color="black"><p align="center"><i class="fa fa-vcard fa-fw w3-margin-right w3-text-theme"></i>&nbsp; Id: &nbsp&nbsp;</font>{{$sales->user_id}}</p><br>
+                    <font size="2" color="black"><p align="center"><i class="fa fa-user-circle-o fa-fw w3-margin-right w3-text-theme"></i>&nbsp; Nombre(s): &nbsp&nbsp;</font>{{$sales->names}}</p><br>
+                    <font size="2" color="black"><p align="center"><i class="fa fa-user-circle fa-fw w3-margin-right w3-text-theme"></i>&nbsp; Apellido(s): &nbsp&nbsp;</font>{{$sales->lastname1}} {{$sales->lastname2}}</p><br>
+                    <font size="2" color="black"><p align="center"><i class="fa fa-venus-mars fa-fw w3-margin-right w3-text-theme"></i>&nbsp; Sexo: &nbsp&nbsp;</font>{{$sales->sex}}</p><br>
+                    <font size="2" color="black"><p align="center"><i class="fa fa-clone fa-fw w3-margin-right w3-text-theme"></i>&nbsp; Rol: &nbsp&nbsp;</font>{{$sales->role}}</p><br>
+                </div>
+
+            </div>
+        </div>
+        <div class="col s9">
+            <div class="card white">
+            </div>
+        </div>
+
+    </div>
+
 @endsection
 
 @section('js')
