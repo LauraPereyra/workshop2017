@@ -16,7 +16,10 @@ class MagazineController extends Controller
      */
     public function index()
     {
-        return view('magazine.magazine');
+        $toys = DB::table('toys')
+            ->get();
+        //dd($toys);
+        return view('magazine.magazine',compact('toys'));
 
     }
 
@@ -49,9 +52,6 @@ class MagazineController extends Controller
      */
     public function show($id)
     {
-        $toy = DB::table('toys')
-            ->where('id',$id);
-        return view('magazine.magazine',compact(['toy'=>$toy]));
 
 
     }

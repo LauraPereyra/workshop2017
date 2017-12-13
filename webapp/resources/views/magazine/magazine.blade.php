@@ -29,16 +29,18 @@
         </header>
         <div id="portfolio-content" class="center-text">
             <div class="portfolio-page" id="page-1">
+                @foreach($toys as $toy)
                 <div class="portfolio-group">
-                    <a class="portfolio-item" href="{{asset('assets/pagina/images/1-large.jpg')}}">
-                        <img src="{{asset('assets/pagina/images/1-small.jpg')}}" alt="image 1">
+                    <a class="portfolio-item" href="/images/avatars/{{ $toy->image }}">
+                        <img src="/images/avatars/{{ $toy->image }}" alt="image 1">
                         <div class="detail">
-                            <h3>Wavy Road</h3>
-                            <p>Duis ac laoreet mi. Maecenas non lorem sed elit molestie tincidunt. Vestibulum tincidunt libero urna, ut dignissim purus accumsan nec.</p>
-                            <span class="btn">View</span>
+                            <h3>{{$toy->name}}</h3>
+                            <p>{{$toy->description}}</p>
+                            <span class="btn">Ver</span>
                         </div>
                     </a>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>	<!-- /.content-container -->
