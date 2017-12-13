@@ -205,6 +205,31 @@ Route::group(['middleware' => 'auth'], function () {
             'uses' => 'WarehouseController@maketransfer',
             'as'   => 'warehouse.maketransfer'
         ]);
+
+        Route::get('warehouse/kardex', [
+            'uses' => 'WarehouseController@kardex',
+            'as'   => 'warehouse.kardex'
+        ]);
+
+        Route::post('warehouse/showkardex', [
+            'uses' => 'WarehouseController@showkardex',
+            'as'   => 'warehouse.showkardex'
+        ]);
+
+        Route::get('warehouse/addtoyswarehouse', [
+            'uses' => 'WarehouseController@addtoyswarehouse',
+            'as'   => 'warehouse.addtoyswarehouse'
+        ]);
+
+        Route::post('warehouse/storetoyswarehouse', [
+            'uses' => 'WarehouseController@storetoyswarehouse',
+            'as'   => 'warehouse.storetoyswarehouse'
+        ]);
+
+
+
+
+
         /*Sales routes*/
 
         Route::get('/sale', [

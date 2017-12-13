@@ -6,6 +6,7 @@ use App\WarehouseToy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Warehouse;
+use App\Toys;
 
 class WarehouseController extends Controller
 {
@@ -135,5 +136,51 @@ class WarehouseController extends Controller
             ->get();
         //dd($stock2);
         return view('warehouse.stocklist')->with('stock', $stock );
+    }
+
+    public function kardex()
+    {
+        $warehouse = Warehouse::pluck('name', 'id');
+        $toys = Toys::pluck('name', 'id');
+        return view('warehouse.kardex', compact('warehouse', 'toys'));
+    }
+
+    public function showkardex(Request $request)
+    {
+        $kardexwarehouse = $request -> kardex_warehouse;
+        $kardextoy = $request -> kardex_toy;
+
+        $results = DB::select(' SELECT kardex_details.* 
+                                from kardex_details, kardexs
+                                WHERE kardexs.toy_id = ?
+                                and kardexs.warehouse_id = ?
+                                and kardexs.id = kardex_details.kardex_id',
+                                [$kardextoy, $kardexwarehouse]);
+
+        //dd($results);
+        return view('warehouse.kardexdetail', compact('results'));
+    }
+
+    public function addtoyswarehouse()
+    {
+        $warehouse = Warehouse::pluck('name', 'id');
+        $toys = Toys::pluck('name', 'id');
+        return view('warehouse.addingtoys', compact('warehouse', 'toys'));
+    }
+
+    public function storetoyswarehouse(Request $request)
+    {
+        $warehouse_id   = $request->warehouse_id;
+        $toy_id         = $request->toy_id;
+        $stock          = $request->stock;
+        $precio_compra  = $request->precio_compra;
+
+        $toywareghouseCreate = DB::table('warehouse_toys')->insert([
+            'warehouse_id' =>  strtoupper($warehouse_id),
+            'toy_id' => strtoupper($toy_id),
+            'stock' => strtoupper($stock),
+            'precio_compra' => strtoupper($precio_compra)
+        ]);
+        return redirect()->route('warehouse.addtoyswarehouse');
     }
 }

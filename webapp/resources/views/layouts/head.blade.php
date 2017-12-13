@@ -134,6 +134,8 @@
                                     <ul>
                                         <li><a href="{{ route('warehouse.index') }}">Listado de almacenes</a></li>
                                         <li><a href="{{ route('warehouse.transfer') }}">Traspasos</a></li>
+                                        <li><a href="{{ route('warehouse.addtoyswarehouse') }}">Ingreso de producto</a></li>
+                                        <li><a href="{{ route('warehouse.kardex') }}">Kardex</a></li>
                                     </ul>
                                 </div>
                             </li>

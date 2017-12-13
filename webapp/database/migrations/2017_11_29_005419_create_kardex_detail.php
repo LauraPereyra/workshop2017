@@ -18,13 +18,13 @@ class CreateKardexDetail extends Migration
             $table->integer('kardex_id')->unsigned();
             $table->foreign('kardex_id')->references('id')->on('kardexs');
             $table->date('date_kardex_detail');
-            $table->string('reason');
-            $table->string('operation');
-            $table->integer('quantity');
-            $table->decimal('costo', 10, 5);
-            $table->decimal('amount', 10, 5);
-            $table->integer('stock_total');
-            $table->decimal('balance', 10, 5);
+            $table->string('reason')->nullable();
+            $table->string('operation')->nullable();
+            $table->integer('quantity')->nullable();
+            $table->decimal('costo', 10, 5)->nullable();
+            $table->decimal('amount', 10, 5)->nullable();
+            $table->integer('stock_total')->nullable();
+            $table->decimal('balance', 10, 5)->nullable();
         });
 
     }

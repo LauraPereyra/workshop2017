@@ -32,7 +32,7 @@ class CreateWarehouseTable extends Migration
             $table->integer('toy_id')->unsigned();
             $table->foreign('toy_id')->references('id')->on('toys');
             $table->integer('stock');
-            $table->integer('precio_compra');
+            $table->decimal('precio_compra', 10, 5);
             $table->timestamps();
         });
     }

@@ -1,6 +1,5 @@
 @extends('layouts.head')
 @section('content')
-@section('content')
     @if(count($errors)>0)
         <div class="red lighten-4">
             <ol>
