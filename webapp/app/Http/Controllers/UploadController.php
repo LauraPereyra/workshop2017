@@ -14,12 +14,7 @@ class UploadController extends Controller
     public function uploadForm($id)
     {
         $toy = Toys::find($id);
-        //return view('toys.photos',compact('toy'));
-        //$photos=DB::table('photos')
-          //  ->join('toys','toy.id','=','photos.toy_id')
-          //  ->where('photos.toy_id',$id)
-          //->get();
-        //return view('toys.photos',compact(['toy','photos']));
+
 
         $toys = DB::table('toys')
             ->join('photos','photos.toy_id', '=', 'toys.id')
@@ -50,7 +45,8 @@ class UploadController extends Controller
                 'images' => $filename
             ]);
         }
-        return 'Upload successful!';
+        //return 'Upload successful!';
+        return view('catalog.index');
     }
 
     public function index()
