@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTriggerToysKardex extends Migration
+class Functionloadtoys extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateTriggerToysKardex extends Migration
      */
     public function up()
     {
-        //unprepared
         DB::raw(
-        '
-        Create TRIGGER toys_kardex AFTER INSERT
-        ON toys for	EACH ROW
-        EXECUTE PROCEDURE load_toys();
+            '
+        create or REPLACE FUNCTION load_toys() RETURNS TRIGGER AS $insertar$
+        DECLARE BEGIN
+            Insert INTO kardexs (toy_id, warehouse_id) VALUES (New.id, 1), (New.id, 2), (New.id, 3);
+            RETURN NULL;
+        END;
+        $insertar$ LANGUAGE plpgsql;
         
         ');
     }
@@ -30,6 +32,6 @@ class CreateTriggerToysKardex extends Migration
      */
     public function down()
     {
-        DB::raw('DROP TRIGGER toys_kardex;');
+        //
     }
 }

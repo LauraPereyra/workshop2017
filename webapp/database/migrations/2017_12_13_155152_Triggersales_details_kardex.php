@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTriggerToysKardex extends Migration
+class TriggersalesDetailsKardex extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateTriggerToysKardex extends Migration
      */
     public function up()
     {
-        //unprepared
+
         DB::raw(
-        '
-        Create TRIGGER toys_kardex AFTER INSERT
-        ON toys for	EACH ROW
-        EXECUTE PROCEDURE load_toys();
-        
+            '
+            Create TRIGGER sales_details_kardex AFTER INSERT
+            ON sales_details for EACH ROW
+            EXECUTE PROCEDURE sales_detail();
+
         ');
+
     }
 
     /**
@@ -30,6 +31,6 @@ class CreateTriggerToysKardex extends Migration
      */
     public function down()
     {
-        DB::raw('DROP TRIGGER toys_kardex;');
+        DB::raw('DROP TRIGGER sales_details_kardex;');
     }
 }
