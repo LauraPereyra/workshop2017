@@ -16,23 +16,33 @@
 
                     <span class="card-title"><font size="5" color="black"><center>Imagenes de Juguete</center></font> </span><br>
 
-                    <form action="/upload" method="post" enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                        <span><font size="5" color="black" face="Comic Sans M">Nombre: </font></span>
-                        <span><font size="5" color="#ffa726">{{ $toy->name }}</font></span> <Br>
-                        <br>
-                        Imagenes Juguetes (puede poner mas de una):
-                        <br>
-
-                        <input type="file" name="photos[]" multiple />
-                        <input type="hidden" name="id" id='id' value="{{ $toy->id }}">
-                        <br /><br />
-                        <input type="submit" value="Upload" />
-                    </form>
-                    <br><Br><br>
+                    <div class="row">
+                    <div class="col s12">
 
 
-                    <img src="/photos/avatars/{{ $toy->images }}" style="width:100px;height:100px;"><br><br>
+                        <div class="col s12 m12 l12" id="toy-div">
+                            <br><br>
+
+                            <form action="/upload" method="post" enctype="multipart/form-data">
+                                {{ csrf_field() }}
+                                Product photos (can attach more than one):
+                                <br />
+                                <input type="file" name="photos[]" multiple />
+                                <input type="hidden" name="id" id='id' value="{{ $toy->id }}">
+                                <br /><br />
+                                <input type="submit" value="Upload" />
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+                <br><Br><br>
+
+                    @foreach($toys as $toy)
+                    <img src="<?php echo asset("storage/$toy->images")?>" style="width:100px;height:100px;"><br><br>
+
+                    @endforeach
 
 
             </div>
