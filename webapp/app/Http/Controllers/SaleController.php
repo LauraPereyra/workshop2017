@@ -123,11 +123,20 @@ class SaleController extends Controller
            ->join('users', 'users.id', '=', 'sales.user_id')
            ->join('toys', 'toys.id', '=', 'sales_details.toy_id')
             ->where('sales.id',$idSale)
-            //->select('sales.id','sales.date_sale','customers.nit')
+            ->select('sales.id as sales_id','sales.date_sale','sales.status','customers.nit',
+                    'customers.nit','customers.name as name_customer','customers.lastname',
+                    'users.id','users.names','users.lastname1','users.lastname2','users.sex','users.role')
             ->first();
-            //dd($sales);
 
-        return view('sale.detail', compact('sales'));
+        $detalles = DB::table('sales_details')
+            ->join('sales', 'sales_details.sale_id', '=', 'sales.id')
+            ->join('toys', 'toys.id', '=', 'sales_details.toy_id')
+            ->where('sales.id',$idSale)
+            ->get();
+
+            //dd($sales,$detalle);
+
+        return view('sale.detail', compact(['sales','detalles']));
 
 
 

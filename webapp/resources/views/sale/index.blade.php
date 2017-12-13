@@ -102,6 +102,10 @@
                                 <!-- <td><a class="btn-floating waves-effect waves-light "><i class="material-icons">delete_forever</i></a></td> -->
 
                                 </tbody>
+                                <tr>
+                                    <td colspan="3" style="text-align: right"><b>Total:</b></td>
+                                    <td id="total_sell"></td>
+                                </tr>
                             </table>
                         </div>
                         <br>
@@ -221,13 +225,14 @@
                     });
                 });
 
-
+                var total=0;
                 function addToySell() {
                     var id_toy = $('#id_toy_hidden').val();
                     var name_toy = $('#name_toy_hidden').val();
                     var price_sell = $('#price_sell_hidden').val();
                     var quantity = $('#cantidad').val();
                     var price_total = price_sell * quantity;
+                    total=total+price_total;
 
                     var newtr = '<tr  data-id="' + id_toy + '">';
                     newtr = newtr + '<td><input type="hidden" id="id_toy" name="id_toy[]" value="'+id_toy+'"><input  class="form-control"  id="name_toy" name="name_toy[]" value="' + name_toy + '" /></td>';
@@ -236,7 +241,7 @@
                     newtr = newtr + '<td class="name_table"><input class="form-control" id="price_total" name="price_total[]" value="' + price_total + '" /></td>';
                     newtr = newtr + '<td align="center"><button type="button" class="btn-floating waves-effect waves-light red remove-item"><i class="material-icons">delete_forever</i></button></td></tr>';
                     $('#TableToys').append(newtr); //Agrego el Producto al tbody de la Tabla con el id=ProSelected
-
+                    document.getElementById("total_sell").innerHTML = total;
                     $('.name-table').each(function() {
                         $(this).find('option[value="' + $(this).val() + '"]').remove(); // borro la opcion  que selecciono.
                     });

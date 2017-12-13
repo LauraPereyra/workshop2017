@@ -24,32 +24,16 @@
                 <p align="center"><img src="{{asset('assets/images/avatar3.png')}}" style="height:106px;width:106px"></p>
                 <div class="card-content center">
                     <font size="2" color="black"><p align="center"><i class="fa fa-vcard fa-fw w3-margin-right w3-text-theme"></i>&nbsp; Nit: &nbsp&nbsp;</font>{{$sales->nit}}</p><br>
-                    <font size="2" color="black"><p align="center"><i class="fa fa-user-circle-o fa-fw w3-margin-right w3-text-theme"></i>&nbsp; Nombre: &nbsp&nbsp;</font>{{$sales->name}}</p><br>
+                    <font size="2" color="black"><p align="center"><i class="fa fa-user-circle-o fa-fw w3-margin-right w3-text-theme"></i>&nbsp; Nombre: &nbsp&nbsp;</font>{{$sales->name_customer}}</p><br>
                     <font size="2" color="black"><p align="center"><i class="fa fa-user-o fa-fw w3-margin-right w3-text-theme"></i>&nbsp; Apellido: &nbsp&nbsp;</font>{{$sales->lastname}}</p>
                 </div>
-
             </div>
-        </div>
-        <div class="col s9">
-            <div class="card white">
-                <div class="card orange lighten-1"><font size="4" color="black"><center>Detalle de venta</center></font></div>
-                <p align="center"><img src="{{asset('assets/images/shop.png')}}" style="height:106px;width:106px"></p>
-                <div class="card-content center">{{$sales->date_sale}}
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="col s3">
 
             <div class="card white">
                 <div class="card orange lighten-1"><font size="4" color="black"><center>Datos del vendedor</center></font></div>
                 <p align="center"><img src="{{asset('assets/images/sales.png')}}" style="height:106px;width:106px"></p>
                 <div class="card-content center">
-                    <font size="2" color="black"><p align="center"><i class="fa fa-vcard fa-fw w3-margin-right w3-text-theme"></i>&nbsp; Id: &nbsp&nbsp;</font>{{$sales->user_id}}</p><br>
+                    <font size="2" color="black"><p align="center"><i class="fa fa-vcard fa-fw w3-margin-right w3-text-theme"></i>&nbsp; Id: &nbsp&nbsp;</font>{{$sales->id}}</p><br>
                     <font size="2" color="black"><p align="center"><i class="fa fa-user-circle-o fa-fw w3-margin-right w3-text-theme"></i>&nbsp; Nombre(s): &nbsp&nbsp;</font>{{$sales->names}}</p><br>
                     <font size="2" color="black"><p align="center"><i class="fa fa-user-circle fa-fw w3-margin-right w3-text-theme"></i>&nbsp; Apellido(s): &nbsp&nbsp;</font>{{$sales->lastname1}} {{$sales->lastname2}}</p><br>
                     <font size="2" color="black"><p align="center"><i class="fa fa-venus-mars fa-fw w3-margin-right w3-text-theme"></i>&nbsp; Sexo: &nbsp&nbsp;</font>{{$sales->sex}}</p><br>
@@ -60,6 +44,43 @@
         </div>
         <div class="col s9">
             <div class="card white">
+                <div class="card orange lighten-1"><font size="4" color="black"><center>Detalle de venta</center></font></div>
+                <p align="center"><img src="{{asset('assets/images/shop.png')}}" style="height:106px;width:106px"></p>
+                <div class="card-content center">
+                    <font size="2" color="black"><p align="center"><i class="fa fa-sort-numeric-asc fa-fw w3-margin-right w3-text-theme"></i>&nbsp; N. de venta &nbsp&nbsp;</font>{{$sales->sales_id}}</p><br>
+                    <font size="2" color="black"><p align="center"><i class="fa fa-calendar fa-fw w3-margin-right w3-text-theme"></i>&nbsp; Fecha: &nbsp&nbsp;</font>{{$sales->date_sale}}</p><br>
+                    <font size="2" color="black"><p align="center"><i class="fa fa-ticket fa-fw w3-margin-right w3-text-theme"></i>&nbsp; Estado: &nbsp&nbsp;</font>{{$sales->status}}</p><br>
+                    <div class="row">
+                        <table class="bordered" >
+                            <thead>
+                            <tr>
+                                <th data-field="id">Nombre</th>
+                                <th data-field="name">Cantidad</th>
+                                <th data-field="price">Precio unitario</th>
+                                <th data-field="price">Precio total</th>
+                            </tr>
+                            </thead>
+                            <tbody id="TableToys">
+                            <?php $total=0 ?>
+                            @foreach($detalles as $detalle)
+                                <?php $total=$total+$detalle->price_total ?>
+                                <tr>
+                                    <td>{{$detalle->name}}</td>
+                                    <td>{{$detalle->quantity}}</td>
+                                    <td>{{$detalle->price_unit}}</td>
+                                    <td>{{$detalle->price_total}}</td>
+                                </tr>
+
+                            @endforeach
+                            <tr>
+                                <td colspan="3" style="text-align:right"><b>Total:</b></td>
+                                <td>{{$total}}</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
 
