@@ -128,7 +128,6 @@
                     @if(Auth::user()->role == 'employee' || Auth::user()->role == 'manager' || Auth::user()->role == 'superadmin')
                         <li class="no-padding active"><a class="waves-effect waves-grey active" href="catalog"><i class="material-icons">settings_input_svideo</i>Inicio</a></li>
                         @if(Auth::user()->role == 'manager' || Auth::user()->role == 'superadmin')
-                            <li class="no-padding active"><a class="waves-effect waves-grey active" href="#"><i class="material-icons">trending_up</i>Dashboard</a></li>
                             <li class="no-padding">
                                 <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">grid_on</i>Almacenes<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                                 <div class="collapsible-body">
