@@ -1,31 +1,63 @@
 @extends('layouts.head')
 @section('content')
     <div class="row">
-        <h4>Detalle del Kardex</h4>
+        <h4 align="center">Detalle del Kardex</h4>
         <br>
-        <table class="striped">
+        <table class="bordered">
             <thead>
-            <th>Fecha</th>
-            <th>Motivo</th>
-            <th>Operacion</th>
-            <th>Cantidad</th>
-            <th>Costo</th>
-            <th>Amount</th>
-            <th>Stock</th>
-            <th>Balance</th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th colspan="3" > <center><b> ENTRADAS </b></center></th>
+                <th colspan="3" > <center><b> SALIDAS </b></center></th>
+                <th colspan="3" > <center><b> EXISTENCIAS </b></center> </th>
+            </thead>
+            <thead>
+                <th>Fecha</th>
+                <th>Operacion</th>
+                <th>Motivo</th>
+                <th>Uds</th>
+                <th>Precio</th>
+                <th>Importe</th>
+                <th>Uds</th>
+                <th>Precio</th>
+                <th>Importe</th>
+                <th>Uds</th>
+                <th>Precio</th>
+                <th>Importe</th>
             </thead>
             <tbody>
             @foreach($results as $results)
-                <tr>
-                    <td> {{ $results -> date_kardex_detail }}</td>
-                    <td> {{ $results -> reason }}</td>
-                    <td> {{ $results -> operation }}</td>
-                    <td> {{ $results -> quantity }}</td>
-                    <td> {{ $results -> costo }}</td>
-                    <td> {{ $results -> amount }}</td>
-                    <td> {{ $results -> stock_total }}</td>
-                    <td> {{ $results -> balance }}</td>
-                </tr>
+                @if($results -> reason == 'compra')
+                    <tr>
+                        <td> {{ $results -> date_kardex_detail }}</td>
+                        <td> {{ $results -> reason }}</td>
+                        <td> {{ $results -> operation }}</td>
+                        <td> {{ $results -> stock_total }}</td>
+                        <td> {{ $results -> costo }}</td>
+                        <td> {{ $results -> balance }}</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                @elseif($results -> operation == 'salida')
+                    <tr>
+                        <td> {{ $results -> date_kardex_detail }}</td>
+                        <td> {{ $results -> reason }}</td>
+                        <td> {{ $results -> operation }}</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> {{ $results -> stock_total }}</td>
+                        <td> {{ $results -> costo }}</td>
+                        <td> {{ $results -> balance }}</td>
+
+                @elseif($results -> reason == 'total')
+
+                        <td> {{ $results -> stock_total }}</td>
+                        <td> {{ $results -> costo }}</td>
+                        <td> {{ $results -> balance }}</td>
+                    </tr>
+                @endif
             @endforeach
             </tbody>
         </table>
