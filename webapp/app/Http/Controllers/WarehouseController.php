@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Warehouse;
 use App\Toys;
+use App\Http\Requests\storetoyswarehouseRequest;
+use App\Http\Requests\kardexRequest;
 
 class WarehouseController extends Controller
 {
@@ -145,7 +147,7 @@ class WarehouseController extends Controller
         return view('warehouse.kardex', compact('warehouse', 'toys'));
     }
 
-    public function showkardex(Request $request)
+    public function showkardex(kardexRequest $request)
     {
         $kardexwarehouse = $request -> kardex_warehouse;
         $kardextoy = $request -> kardex_toy;
@@ -168,7 +170,7 @@ class WarehouseController extends Controller
         return view('warehouse.addingtoys', compact('warehouse', 'toys'));
     }
 
-    public function storetoyswarehouse(Request $request)
+    public function storetoyswarehouse(storetoyswarehouseRequest $request)
     {
         $warehouse_id   = $request->warehouse_id;
         $toy_id         = $request->toy_id;
