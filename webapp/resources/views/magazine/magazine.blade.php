@@ -52,7 +52,7 @@
                 <li><a href="#portfolio" class="smoothScroll">CATALOGO</a></li>
                 <li><a href="#about" class="smoothScroll">SOBRE NOSOTROS</a></li>
                 <li><a href="#contact" class="smoothScroll">CONTACTO</a></li>
-                <li><a href="{{ route('auth.login') }}">INGRESAR</a></li>
+                <li><a href="{{ route('auth.login') }}" target="_blank">INGRESAR</a></li>
             </ul>
         </div>
 
@@ -71,61 +71,36 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="slider-caption">
-                                <h2>Plan your trip</h2>
-                                <p class="color-white">Fusce elementum nisi et magna tristique, ut facilisis magna dapibus.</p>
+                                <h2>TOY HOUSE</h2>
+                                <p class="color-white">Jugar para un niño es la posibilidad de recortar un trocito de mundo y manipularlo.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </li>
             <li>
-                <img src="{{asset('assets/pagina/images/slider/slide2.jpg')}}" alt="slider image 2">
+                <img src="{{asset('assets/pagina/images/slider/slide2.jpeg')}}" alt="slider image 2">
                 <div class="container caption-wrapper">
                     <div class="slider-caption">
-                        <h2>Bootstrap Layout</h2>
-                        <p class="color-white">Pellentesque mollis purus ipsum. Fusce tristique ante et est placerat dignissim.</p>
+                        <h2> TOY HOUSE</h2>
+                        <p class="color-white">Lo mejor en Toy House.</p>
                     </div>
                 </div>
             </li>
             <li>
-                <img src="{{asset('assets/pagina/images/slider/slide3.jpg')}}" alt="slider image 3">
+                <img src="{{asset('assets/pagina/images/slider/slide3.jpeg')}}" alt="slider image 3">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="slider-caption">
-                                <h2>Mobile Ready</h2>
-                                <p class="color-white">You may modify any content section as you wish.</p>
+                                <h2>TOY HOUSE</h2>
+                                <p class="color-white">Los mejores juguetes los encuentras en Toy House.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </li>
-            <li>
-                <img src="{{asset('assets/pagina/images/slider/slide4.jpg')}}" alt="slider image 4">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="slider-caption">
-                                <h2>Responsive Theme</h2>
-                                <p class="color-white">Phasellus ultrices, nunc et tempus porta, tellus purus elementum.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <img src="{{asset('assets/pagina/images/slider/slide5.jpg')}}" alt="slider image 5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="slider-caption">
-                                <h2>Download it FREE!</h2>
-                                <p class="color-white">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
+
         </ul> <!-- /.bxslider -->
         <div class="bx-thumbnail-wrapper">
             <div class="container">
@@ -133,10 +108,8 @@
                     <div class="col-md-12">
                         <div id="bx-pager">
                             <a data-slide-index="0" href=""><img src="{{asset('assets/pagina/images/slider/thumb1.jpg')}}" alt="thumbnail 1" /></a>
-                            <a data-slide-index="1" href=""><img src="{{asset('assets/pagina/images/slider/thumb2.jpg')}}" alt="thumbnail 2" /></a>
-                            <a data-slide-index="2" href=""><img src="{{asset('assets/pagina/images/slider/thumb3.jpg')}}" alt="thumbnail 3" /></a>
-                            <a data-slide-index="3" href=""><img src="{{asset('assets/pagina/images/slider/thumb4.jpg')}}" alt="thumbnail 4" /></a>
-                            <a data-slide-index="4" href=""><img src="{{asset('assets/pagina/images/slider/thumb5.jpg')}}" alt="thumbnail 5" /></a>
+                            <a data-slide-index="1" href=""><img src="{{asset('assets/pagina/images/slider/thumb2.jpeg')}}" alt="thumbnail 2" /></a>
+                            <a data-slide-index="2" href=""><img src="{{asset('assets/pagina/images/slider/thumb3.jpeg')}}" alt="thumbnail 3" /></a>
                         </div>
                     </div>
                 </div>
@@ -163,7 +136,7 @@
                             <img src="/images/avatars/{{ $toy->image }}" alt="image 1">
                             <div class="detail">
                                 <h3>{{$toy->name}}</h3>
-                                <p>{{$toy->description}}</p>
+                                <p>Descripcion: {{$toy->description}}</p>
                                 <span class="btn">Ver</span>
                             </div>
                         </a>
@@ -186,8 +159,8 @@
             ================================================== -->
             <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
                 <div class="section-title">
-                    <h5 class="wow bounceIn">ACTIVE PEOPLE</h5>
-                    <h1 class="heading color-white">WHO WE ARE</h1>
+                    <h5 class="wow bounceIn">TOY HOUSE</h5>
+                    <h1 class="heading color-white">SOBRE NOSOTROS</h1>
                     <hr>
                     <p class="color-white">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia deserunt.</p>
                 </div>
@@ -230,8 +203,7 @@
             <div class="col-md-12 col-sm-12">
 
                 <ul class="social-icon">
-                    <li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="0.3s"></a></li>
-                    <li><a href="#" class="fa fa-github wow fadeIn" data-wow-delay="1.3s"></a></li>
+                    <li><a href="https://github.com/LauraPereyra/workshop2017" target="_blank" class="fa fa-github wow fadeIn" data-wow-delay="1.0s"></a></li>
                 </ul>
 
             </div>

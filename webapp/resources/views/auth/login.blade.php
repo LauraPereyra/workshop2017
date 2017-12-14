@@ -43,7 +43,6 @@
                                     <center><span class="card-title">Iniciar Sesión</span></center><br>
                                     </font>
                                     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/><br><br>
-                                    {{asset('assets/pagina/images/1-small.jpg')}}
                                     <div class="row">
                                         {{ Form::open(['route'=>'auth.login', 'method' => 'POST']) }}
 
